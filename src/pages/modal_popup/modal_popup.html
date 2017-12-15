@@ -1,0 +1,49 @@
+<!-- <ion-header>
+
+  <ion-title style="width: 91%;
+  margin: 0 auto;
+  float: left;
+  padding-bottom: 5px;">Rate Bowdaa</ion-title>
+
+ 
+    <button  class="bckgr_trans" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+  
+</ion-header> -->
+
+<ion-content scroll="true" class="top_mdl">
+<div class="mdl_logn" no-padding style="background: #fff;">
+    <form  #heroForm="ngForm" novalidate>
+  <div class="mdl_st" *ngIf="shoe_content==1">
+     
+<div class="heading_popup">
+  <div class="rte_bowda">Rate Bowdaa</div>
+  <button  class="bckgr_trans" (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+</div>
+<rating class="gp_str" [(ngModel)]="currentRate" name="currentRate"></rating>
+  <div class="area_txt">
+  <textarea class="form-control frnt_brd" rows="3" cols="29" placeholder="Place your review here" [(ngModel)]="web_rating" name="web_rating">
+      </textarea> 
+    </div>
+  </div>
+  <div class="mdl_st" *ngIf="shoe_content==0">
+    <div class="heading_popup">
+        <div class="rte_bowda">Rate Job</div>
+        <button  class="bckgr_trans" (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+      </div>
+      <rating class="gp_str" [(ngModel)]="jobstar"  name="jobstar" ></rating>
+      <div class="area_txt">
+          <textarea class="form-control frnt_brd" rows="3" cols="29" placeholder="Place your review here"  [(ngModel)]="job_rating" name="job_rating" required>
+              </textarea> 
+            </div>
+            </div>
+            <button class="btn defult_btn btn_shot " (click)="change_value(heroForm)" *ngIf="shoe_content==1">Next</button>
+            <button class="btn defult_btn btn_shot " (click)="submit_rating(heroForm)" *ngIf="shoe_content==0" [disabled]="!heroForm.form.valid">Submit</button>
+          </form> 
+        </div>
+</ion-content>

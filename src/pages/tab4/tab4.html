@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Explore</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+  <div class="market">
+    <h3 class="titles">The Pillars Of Our Marketplace</h3>
+    <div class="cardz">
+      <ion-card>
+        <img src="assets/images/a.png"/>
+        <ion-card-content>
+          <p color="red">Manufacturers</p>
+          <!-- <button ion-button clear class="fnd">Find out more ></button> -->
+         <button ion-button small color="yellow" class="submit" (click)="explorelistPage('Manufacturer')">Search Now</button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/images/b.png"/>
+        <ion-card-content>
+          <p color="red">Suppliers</p>
+          <!-- <button ion-button clear class="fnd">Find out more ></button> -->
+         <button ion-button small color="yellow" class="submit"  (click)="explorelistPage('Supplier')" >Search Now</button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/images/c.png"/>
+        <ion-card-content>
+          <p color="red">Retailers</p>
+          <!-- <button ion-button clear class="fnd">Find out more ></button> -->
+         <button ion-button small color="yellow" class="submit" (click)="explorelistPage('Retailer')">Search Now</button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <img src="assets/images/d.png"/>
+        <ion-card-content>
+          <p color="red">Designers</p>
+          <!-- <button ion-button clear class="fnd">Find out more ></button> -->
+         <button ion-button small color="yellow" class="submit"  (click)="explorelistPage('Designer')">Search Now</button>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,89 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{role_explore}}</ion-title>
+        <ion-buttons end>
+        <button ion-button (click)="presentModal();">
+      <ion-icon name="options"></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+  <div class="market">
+
+  <ion-list *ngFor="let  listing_user_explore of all_user_list">
+    <ion-item class="lst">
+      <ion-avatar item-start class="usr" *ngIf="listing_user_explore?.profilepicture">
+        <img src="{{image_path}}{{listing_user_explore?.profilepicture}}">
+      </ion-avatar>
+      <ion-avatar item-start class="usr" *ngIf="!listing_user_explore?.profilepicture">
+        <img src="{{image_path}}noprofilepicture.gif">
+      </ion-avatar>
+      <h2 class="titles fname">{{listing_user_explore.fullname}}</h2>
+      <div class="exper_yr"><h3 class="title_b tle_yrs">Years Of Experience:</h3>
+      <span class="zro_yrs">{{listing_user_explore.experience}} </span></div>
+      <!-- <ul class="star">
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star-outline" item-start></ion-icon></li>
+      </ul> -->
+      <rating [(ngModel)]="listing_user_explore.ratingavg" 
+      #listing_user_explore.ratingavg="ngModel"
+      readOnly="true" 
+      max="5" 
+      emptyStarIconName="star-outline"
+      halfStarIconName="star-half" 
+      starIconName="star" 
+      nullable="false" 
+      ></rating>
+      <div class="overlay" (click)="Explore_user_details(listing_user_explore.USERID);"></div>
+      <!--<h3 class="years" (click)="Explore_user_details(listing_user_explore.USERID)">{{listing_user_explore.experience}}<br/>Years Of Experience</h3>-->
+    </ion-item>
+
+    <!-- <ion-item class="lst">
+      <ion-avatar item-start class="usr">
+        <img src="assets/images/a.jpg">
+      </ion-avatar>
+      <h2 class="titles">Peter Luck</h2>
+      <h3 class="title_b">Manufacture Enamelling,Mounting</h3>
+      <ul class="star">
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star-outline" item-start></ion-icon></li>
+      </ul>
+      <div class="overlay"></div>
+      <h3 class="years">10 <br/>Years Of Experience</h3>
+    </ion-item> -->
+
+    <!-- <ion-item class="lst">
+      <ion-avatar item-start class="usr">
+        <img src="assets/images/a.jpg">
+      </ion-avatar>
+      <h2 class="titles">Peter Luck</h2>
+      <h3 class="title_b">Manufacture Enamelling,Mounting</h3>
+      <ul class="star">
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star" item-start></ion-icon></li>
+        <li><ion-icon name="star-outline" item-start></ion-icon></li>
+      </ul>
+      <div class="overlay"></div>
+      <h3 class="years">10 <br/>Years Of Experience</h3>
+    </ion-item> -->
+
+  </ion-list>
+
+  </div>
+</div>
+
+</ion-content>

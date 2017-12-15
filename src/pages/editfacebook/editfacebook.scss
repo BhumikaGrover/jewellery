@@ -1,0 +1,241 @@
+page-editfacebook  {
+
+.list-md .item-input:last-child {
+    border-bottom:0px;
+}
+
+.list-md > .item-block:last-child ion-label, .list-md > .item-block:last-child .item-inner, .list-md > .item-wrapper:last-child ion-label, .list-md > .item-wrapper:last-child .item-inner {
+    border-bottom: 1px solid #dedede;
+}
+
+.list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent;
+    box-shadow:none;
+}
+
+.item-md.item-input.item-input-has-focus:last-child .item-inner, .item-md.item-input.input-has-focus:last-child .item-inner, .item-ios.item-input.item-input-has-focus:last-child .item-inner, .item-ios.item-input.input-has-focus:last-child .item-inner {
+    border-bottom-color: #c4013e;
+    box-shadow: 0 -1px 0 0 #c4013e;
+}
+
+.list-ios > .item-block:first-child {
+    border-top: 0px;
+}
+
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+
+.list-ios .item-block .item-inner {
+    border-bottom: 0.55px solid #c8c7cc;
+}
+
+.list-ios > .item-block:last-child .item-inner, .list-ios > .item-wrapper:last-child .item-block .item-inner {
+    border-bottom: 0.55px solid #c8c7cc;
+}
+
+ion-label {
+    border-bottom: 0 none !important;
+    color: #757575;
+    font-size: 1.6rem;
+}
+
+.label-md {
+    margin: 13px 8px;
+    font-family: Myriad-Regular;
+    color: #757575 !important;
+
+}
+
+ion-app.md [padding], ion-app.md [padding] .scroll-content {
+    padding: 8px;
+}
+.crd{
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.crd_user {
+    border: 1px solid #c4013e;
+    border-radius: 50%;
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+}
+.crd_user > img {
+    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main_crd {
+    left: 0;
+    margin: auto;
+    // position: absolute;
+    // right: 0;
+    // top: 14px;
+    padding-top: 16px;
+}
+
+.title{
+    font-family: Myriad-Bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 15px 0 10px 8px;
+}
+
+.edit .item{ background-color: #fffcfc;}
+
+/**/
+ion-scroll {
+    float: left;
+    height: 74px;
+    white-space: nowrap;
+    width: 100%;
+    background: #fffcfc;
+}
+.img_box  {
+    display: inline-block;
+    height:56px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 56px;
+    border-radius: 5px;
+}
+
+.scroll-content{padding:0 !important;}
+/**/
+
+.edit ion-item input{
+    color: #757575;
+    font-family: Myriad-Regular;
+    margin-bottom: 0;
+    margin-top: 25px;
+	margin-left: 0;
+}
+
+.edit .item{
+	padding-left: 8px;
+    padding-right: 8px;
+	}
+
+.fileUpload {
+    position: relative;
+}
+
+.fileUpload span {
+    background: #ffc300;
+    border-radius: 2px;
+    color: #000;
+    font-family: Myriad-Bold;
+    padding:8px 10px;
+}
+
+.fileUpload input.upload {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.upld {
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 120px;
+}
+
+.social_logo .icon {
+    margin-right: 0;
+}
+.social_logo .item-inner {
+    margin-left: 0 !important;
+}
+
+.social_logo {
+    background: transparent;
+}
+
+.sub {
+    float: left;
+    text-align: center;
+    width: 100%;
+    background: #fffcfc;
+}
+
+.submit {
+    box-shadow: none;
+    font-family: Myriad-Bold;
+    font-size: 15px;
+    margin: 15px 0;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.rd{
+    background: #fffcfc ;
+    color: #757575;
+    font-size: 1.6rem;
+      padding-left: 8px !important;
+    padding-top: 25px !important;
+	width: 97%;
+	float: left;
+}
+
+.rd .row {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0px;
+}
+.label-ios, .label-md{
+    margin: 0px;
+}
+
+.select-ios, .select-md{
+    padding: 11px 8px 5px 16px;
+}
+.soc .row .col:nth-child(1) {
+    padding-left: 8px;
+}
+
+.soc .row .col:nth-child(2) {
+    padding-right: 8px;
+}
+
+
+
+
+.red-alt{
+    font-size: 12px;
+    color:#c4013e;
+    padding:3px 0px 0px 3px;
+}
+.alert-wrapper{ padding: 0 !important;
+}
+
+
+
+
+
+
+
+}

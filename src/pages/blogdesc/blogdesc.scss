@@ -1,0 +1,64 @@
+page-blogdesc {
+
+.wade > span {
+    color: #737373;
+    font-family: Myriad-Regular;
+    font-size: 12px;
+}
+.wade h3 {
+    font-family: Myriad-Bold;
+}
+.wade {
+    float: left;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.sh{
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+
+.share {
+    color: #c4013e;
+    font-size: 18px;
+}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.crd{
+background: #fffcfc !important;
+width:100%;
+float:left;
+ margin: 0;
+}
+
+.descrb{
+    color: #737373;
+    font-family: Myriad-Semibold;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.titles span {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 12px;
+     text-transform: uppercase;
+}
+
+.blog {
+    border-bottom: 1px solid #dddddd;
+}
+
+.blog:last-child{border-bottom: 0px;}
+
+
+}

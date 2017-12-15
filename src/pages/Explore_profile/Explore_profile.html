@@ -1,0 +1,135 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>View Profile</ion-title>
+     <ion-buttons start>
+  <button class="envlop_snd" (click)="Chatting(userinfo?.USERID,userinfo?.fullname)">
+     <ion-icon name="mail"></ion-icon>
+    </button>
+  </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #f1f1f1;">
+
+   <ion-card class="crd" no-margin>
+    <img src="assets/images/back.jpg"/>
+    <div class="main_crd">
+      <div class="crd_user"><img [src]="userinfo?.profilepicture"/></div>
+
+    
+    </div>
+    <div class="crd_cnt">
+      <div class="card-title" class="fname">{{userinfo?.fullname}}</div>
+      <!-- <ul class="social">
+        <li><a><img src="assets/images/fb1.png" /></a></li>
+        <li><a><img src="assets/images/insta2.png" /></a></li>
+        <li><a><img src="assets/images/twitter3.png" /></a></li>
+        <li><a><img src="assets/images/youtube4.png" /></a></li>
+        <li><a><img src="assets/images/pinit5.png" /></a></li>
+        <li><a><img src="assets/images/linkedin6.png" /></a></li>
+      </ul> -->
+    </div>
+  </ion-card>
+
+  <div style="padding:8px;">
+  <ion-grid class="profile">
+  <ion-row *ngIf="userinfo?.fullname">
+    <ion-col col-4>First Name:</ion-col>
+    <ion-col col-8 class="fname">{{userinfo?.fullname}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.lastname">
+    <ion-col col-4>Last Name:</ion-col>
+    <ion-col col-8 class="fname">{{userinfo?.lastname}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.pemail">
+    <ion-col col-4>E-Paypal:</ion-col>
+    <ion-col col-8>{{userinfo?.pemail}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.address">
+    <ion-col col-4>Address:</ion-col>
+    <ion-col col-8>{{userinfo?.address}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.country">
+    <ion-col col-4>Country:</ion-col>
+    <ion-col col-8>{{userinfo?.country}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.skills">
+    <ion-col col-4>Skills:</ion-col>
+    <ion-col col-8>{{userinfo?.skills}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.description">
+    <ion-col col-4  >Background Info:</ion-col>
+    <ion-col col-8>{{userinfo?.description}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.gender">
+    <ion-col col-4>Gender:</ion-col>
+    <ion-col col-8>{{userinfo?.gender}}</ion-col>
+  </ion-row>
+   <ion-row *ngIf="userinfo?.mobile">
+    <ion-col col-4>Contact:</ion-col>
+    <ion-col col-8>{{userinfo?.mobile}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.email">
+    <ion-col col-4>Email:</ion-col>
+    <ion-col col-8>{{userinfo?.email}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.experience">
+    <ion-col col-4>Years Of  Experience:</ion-col>
+    <ion-col col-8>{{userinfo?.experience}}</ion-col>
+  </ion-row>
+  <ion-row *ngIf="userinfo?.role">
+    <ion-col col-4>Role:</ion-col>
+    <ion-col col-8>{{userinfo?.role}}</ion-col>
+  </ion-row>
+</ion-grid>
+<div *ngIf="gallery_hide !=0">
+<h3 class="titles">Gallery</h3>
+<ion-scroll scrollX="true">
+  <div class="box_outer">
+  <div class="img_box" *ngFor="let gallery of picgallery ; let i = index " (click)="presentModal(i)">
+ 	  <div class="card">
+      <img [src]="gallery?.imgurl" />
+      <div class="overlay"></div> </div>
+  </div>
+  
+  <!-- <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div> -->
+  </div>
+   </ion-scroll>
+</div>
+  </div>
+
+</ion-content>
+

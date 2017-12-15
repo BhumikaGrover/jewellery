@@ -1,0 +1,145 @@
+page-login {
+.bck_grnd{
+   width: 100%;
+    float: left;
+    background: #c70039;
+}
+.bck_grnd1{
+ width: 100%;
+    float: left;
+    background: #c70039;
+}
+.box0 {
+       width: 100%;
+    margin: auto;
+    float: left;
+}
+
+.bck_grnd2{
+     width: 100%;
+    float: left;
+    background: #c70039;
+}
+// .swiper-slide img {
+//        width: 160px;
+//     height: auto;
+//     max-width: 100%;
+//     max-height: 100%;
+//     float: right;
+// }
+
+// .wlcm_txt {
+//      width: 165px;
+//     float: left;
+//     color: #fff;
+//     font-weight: 600;
+//     font-size: 24px;
+//     line-height: 40px;
+
+// }
+.wlcm_txt {
+     width: 100%;
+    float: left;
+    color: #fff;
+    font-weight: 600 !important;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+.wlcm_cmmnty {
+    width: 100%;
+    float: left;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    
+}
+.cnnct_cmmnty{
+
+    width: 100%;
+    float: left;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 24%;
+}
+.slide-zoom{
+    height:100%;
+
+}
+.button_box{
+    width: 100%;
+    float: left;
+  
+}
+.slde_pic1{
+    width: 100%;
+    float: left;
+  
+}
+.slde_pic2 {
+    width: 100%;
+    float: left;
+  
+}
+.btn_in {
+    background: #ffc300;
+        background-color: rgb(255, 195, 0);
+    background-color: #ffc300;
+    margin-top: auto;
+    padding: 10px 18px;
+    color: #000;
+    width: 55%;
+    height: 36px;
+    display: block;
+    float: none;
+    margin: auto;
+    font-weight: 600;
+    font-size: 20px;
+}
+.log_slde {
+    width: 60%;
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+.wl_cvr2{
+    width: 100%;
+    float: left;
+}
+.spacer1 {
+       width: 100%;
+    float: left;
+    height: 11vh !important;
+}
+.spacer2 {
+    width: 100%;
+    float: left;
+    height:9vh !important;
+}
+.cnt_long{
+    width:25% !important;
+    float:none;
+    margin:0 auto;
+}
+
+.btn_in:hover:not(.disable-hover) {
+    background-color:#ffc300;
+}
+.button-md.activated{
+    background-color: #ffc300 !important;
+    color:#fff;
+}
+// @media only screen and (max-width: 320px) {
+//     .wlcm_txt {
+//         width: 300px;
+//         float: none;
+//         margin: 0px auto;
+//         display: inline-block;
+//         line-height: 34px;
+//     }
+// .swiper-slide img {
+//     width: 126px;
+// }
+}
+

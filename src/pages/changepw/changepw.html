@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Change Password</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background: #f1f1f1;">
+<div class="logo"><img src="assets/images/logo.png" /></div>
+<form [formGroup]="Changepwd" (ngSubmit)="chnagep(Changepwd)" > 
+<ion-list class="log_list">
+<h3 class="fw">CHANGE PASSWORD</h3>
+ <ion-item no-padding>
+    <ion-input type="password" placeholder="Old Password" [(ngModel)]="changepwd.oldpassword" formControlName="oldpassword"></ion-input>
+  </ion-item>
+  <p *ngIf="!isValid('oldpassword')" danger padding-left>Password required</p>
+   <ion-item no-padding>
+    <ion-input type="password" placeholder="New Password" [(ngModel)]="changepwd.newpassword" formControlName="newpassword"></ion-input>
+  </ion-item>
+  <p *ngIf="!isValid('newpassword')" danger padding-left>Password required</p>
+   <ion-item no-padding>
+    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="changepwd.confirmpassword" formControlName="confirmpassword"></ion-input>
+  </ion-item>
+  <div class='form-text error' *ngIf="Changepwd.controls.confirmpassword.touched">
+          <div *ngIf="Changepwd.hasError('mismatchedPasswords')">Passwords do not match.</div>
+        </div>
+
+<button ion-button block color="yellow" class="submit" [disabled]="!Changepwd.valid">CHANGE PASSWORD</button>
+</ion-list>
+</form>
+</ion-content>

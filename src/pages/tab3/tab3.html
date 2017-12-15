@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Blog</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+
+  <ion-card class="crd">
+
+      <div class="blog" *ngFor="let b of blog_listing">
+          <div class="wade" >
+            <span>{{b.created  | date:'MMMM d, yyyy'}}</span>
+            <h3 class="fname">{{b.title}}</h3>
+            <!-- <span><ion-icon name="person"></ion-icon> Wade</span> -->
+          </div>
+         <div class="blog_fed">
+        <img src="{{blog_image_path}}{{b.image}}"/>
+      </div>
+        <ion-card-content>
+          <p class="descrb" [innerHTML]="b.description">
+            
+          </p>
+          <button ion-button clear no-margin no-padding class="titles" (click)="blogdescPage(b.id);">Continue Reading <ion-icon name="arrow-round-forward" color="red"></ion-icon></button>
+
+        </ion-card-content>
+      </div>
+
+       <!-- <div class="blog">
+          <div class="wade">
+            <span>May 29,2017</span>
+            <h3>Lorem Ipsum is simply dummy</h3>
+            <span><ion-icon name="person"></ion-icon> Wade</span>
+          </div>
+
+        <img src="assets/images/blog2.jpg"/>
+        <ion-card-content>
+          <p class="descrb">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, 
+          remaining essentially unchanged.
+          </p>
+          <button ion-button clear no-margin no-padding class="titles">Continue Reading <ion-icon name="arrow-round-forward" color="red"></ion-icon></button>
+
+        </ion-card-content>
+      </div> -->
+
+  </ion-card>
+
+</div>
+
+</ion-content>

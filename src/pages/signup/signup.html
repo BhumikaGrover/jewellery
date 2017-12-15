@@ -1,0 +1,207 @@
+
+<ion-content padding style="background: #f1f1f1;" id="hghgh">
+<div class="logo"><img src="assets/images/logo.png" /></div>
+<div class="user_proouter">
+<div class="user_pro">
+  <div class="userpic">
+    <img src="{{show_mage}}" />
+  </div>
+
+  <div class="edit_prof">
+    <div class="inputouter">
+  <button (click)="presentActionSheet()" style="background: transparent;
+  padding-left: 4px;
+  font-size: 13px;">  <ion-icon class="editcamera" name="camera" ></ion-icon></button>
+    <!-- <input type="file" class="upload" /> -->
+    </div>
+  </div>
+</div>
+</div>
+
+<ion-list class="log_list">
+<form  #heroForm="ngForm"  novalidate>
+ <ion-item no-padding>
+    <ion-input type="text" [(ngModel)]="data.fname" name="fname" placeholder="First Name" #fname="ngModel" pattern="[a-zA-Z]+"required></ion-input>
+  </ion-item>
+  <div *ngIf="fname.errors && (fname.dirty || fname.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!fname.errors.required" class="alert alert-danger red-alt">
+         First name is required
+        </div>
+		<div [hidden]="!fname.errors.pattern" class="alert alert-danger red-alt">
+         Only alphabets are allowed
+        </div>
+     </div>
+ <!-- <p *ngIf="!isValid('fname')" danger padding-left>Invalid Firstname</p> -->
+ 
+ <!-- <div class='form-text error' *ngIf="myForm.controls.fname.touched">
+          <div *ngIf="myForm.hasError('nameValidator')">Passwords do not match.</div>
+        </div> -->
+  <ion-item no-padding>
+    <ion-input type="text" [(ngModel)]="data.lname" name="lname" placeholder="Last Name" pattern="[a-zA-Z]+" #lname="ngModel" required></ion-input>
+  </ion-item>
+<div *ngIf="lname.errors && (lname.dirty || lname.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!lname.errors.required" class="alert alert-danger red-alt">
+         Last name is required
+        </div>
+		<div [hidden]="!lname.errors.pattern" class="alert alert-danger red-alt">
+         Only alphabets are allowed
+        </div>
+     </div>
+   <ion-item no-padding>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="data.email" name="email" #email="ngModel" required pattern='^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'></ion-input>
+  </ion-item>
+<div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger red-alt">
+		   <div [hidden]="!email.errors.required" class="alert alert-danger red-alt">
+        email is required
+			</div>
+			<div [hidden]="!email.errors.pattern" class="alert alert-danger red-alt">
+			 Invalid email
+			</div>
+		</div>
+
+  <ion-item no-padding>
+    <ion-input type="text" placeholder="Choose Name" [(ngModel)]="data.choosename" name="choosename" #choosename="ngModel" minlength="4" maxlength="15" required></ion-input>
+  </ion-item> 
+  <div *ngIf="choosename.errors && (choosename.dirty || choosename.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!choosename.errors.required" class="alert alert-danger red-alt">
+         Choosename is required
+        </div>
+		 <div [hidden]="!choosename.errors.minlength" class="alert alert-danger red-alt">
+        Minimum 4 character
+        </div> 
+     </div>
+ <!-- <ion-item no-padding>
+    <ion-input type="text" placeholder="Gender" [(ngModel)]="userInfo.gender" formControlName="gender"></ion-input>
+  </ion-item> -->
+  <!-- <ion-label  class="item item-input item-select" > 
+    <div class="input-label" [hidden]="data.gender">
+   Gender
+ </div> -->
+ 
+ <ion-item no-padding id="kg">
+     <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="data.gender"> 
+    <div class="input-label gndr_mle">
+   Gender
+ </div> </ion-label>
+    <ion-select [(ngModel)]="data.gender" name="gender" #gender="ngModel" required class="gndr colrslct " > 
+     <ion-option value="male">Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+    </ion-select>
+  
+  
+  </ion-item>
+
+<!-- </ion-label> -->
+    <!-- <ion-label  class="item item-input item-select" > 
+      <div class="input-label">
+     Gender
+   </div>
+   <ion-select [(ngModel)]="data.gender" name="gender" #gender="ngModel" required class="gndr"> 
+    <ion-option value="male">Male</ion-option>
+    <ion-option value="female">Female</ion-option>
+  </ion-select> 
+ </ion-label > -->
+
+  <div *ngIf="gender.errors && (choosename.dirty || gender.touched)" class="alert alert-danger clor_chnge red-alt">
+       <div [hidden]="!gender.errors.required" class="alert alert-danger red-alt">
+        Gender is required
+        </div>
+     </div>
+  <ion-item no-padding>
+   
+     <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MMM DD, YYYY" [(ngModel)]="data.dob" name="dob" id="dob" #dob="ngModel"></ion-datetime>
+  </ion-item>
+<div *ngIf="dob.errors && (password.dirty || dob.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!dob.errors.required" class="alert alert-danger red-alt">
+       DOB is required
+        </div>
+     </div>
+   <ion-item no-padding>
+    <ion-input type="password" placeholder="Choose Password" [(ngModel)]="data.password" name="password" #password="ngModel" minlength="5" required></ion-input>
+  </ion-item>
+  <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!password.errors.required" class="alert alert-danger red-alt">
+        Password is required
+        </div>
+      <div [hidden]="!password.errors.minlength" class="alert alert-danger red-alt">
+        Password is weak
+        </div> 
+     </div>
+   <ion-item no-padding>
+    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="data.duplicatePassword" name="duplicatePassword" #duplicatePassword="ngModel" required></ion-input>
+  </ion-item>
+<div *ngIf="duplicatePassword.errors && (duplicatePassword.dirty || duplicatePassword.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!duplicatePassword.errors.required" class="alert alert-danger red-alt">
+      Confirm Password is required
+        </div>
+     </div>
+   <ion-item no-padding>
+    <ion-input type="number" placeholder="Mobile Number" [(ngModel)]="data.phone" name="phone" #phone="ngModel"  pattern='[0-9]+'  required></ion-input>
+  </ion-item>
+<div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!phone.errors.required" class="alert alert-danger red-alt">
+      Mobile number is required
+        </div>
+    <div [hidden]="!phone.errors.pattern" class="alert alert-danger red-alt">
+				Enter a valid phone number
+			</div>
+     </div>
+   <ion-item no-padding>
+      <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="data.gaming"> 
+          <div class="input-label gndr_mle">
+        Country
+       </div> </ion-label>
+    <!-- <ion-label style="border:0px; margin-left: 8px;">Country</ion-label> -->
+    <ion-select [(ngModel)]="data.gaming" name="gaming" #gaming="ngModel" required class="colrslct">
+     <ion-option value={{listing.country_code}} *ngFor="let listing of country_list">{{listing.country_name}}</ion-option>
+      <!-- <ion-option value="n64">Nintendo64</ion-option> -->
+    </ion-select>
+  </ion-item>
+<div *ngIf="gaming.errors && (gaming.dirty || gaming.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!gaming.errors.required" class="alert alert-danger red-alt">
+      Country is required
+        </div>
+     </div>
+  <ion-item no-padding>
+      <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="data.role"> 
+          <div class="input-label gndr_mle">
+       Role
+       </div> </ion-label>
+    <!-- <ion-label style="border:0px; margin-left: 8px;">Role</ion-label> -->
+    <ion-select [(ngModel)]="data.role"  name='role' id="role" #role="ngModel" required class="colrslct">
+     <ion-option value="Consumer">Consumer</ion-option>
+      <ion-option value="Manufacturer">Manufacturer</ion-option>
+       <ion-option value="Designer">Designer</ion-option>
+        <ion-option value="Supplier">Supplier</ion-option>
+         <ion-option value="Retailer">Retailer</ion-option>
+    </ion-select>
+  </ion-item>
+  <div *ngIf="role.errors && (role.dirty || role.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!role.errors.required" class="alert alert-danger red-alt">
+      Role is required
+        </div>
+     </div>
+
+ <h3 class="human" style="text-align: center;color: #888888;">*All fields are required</h3> 
+
+<!-- <ion-grid no-padding>
+  <ion-row>
+    <ion-col col-4 style="text-align: center;"><img src="assets/images/captcha.jpg" /></ion-col>
+    <ion-col col-8><ion-input type="text" placeholder="Fill the captcha" class="fill"></ion-input></ion-col>
+  </ion-row>
+</ion-grid> -->
+
+
+  
+<div style="width:10%;float:left;margin:20px 0;"><ion-checkbox agree="false" color="red" [(ngModel)]="data.agree" name='agree' id="agree" #agree="ngModel" required></ion-checkbox></div>
+  <!-- <ion-checkbox color="red"></ion-checkbox> -->
+
+<div style="width:90%;float:left; margin:20px 0;"><span style="color:#c4013e;">You must agree to the</span> <u class="trm_chng" (click)=terms() style="color:#c4013e;">Terms & Conditions</u></div>
+
+<button ion-button block type="submit" color="yellow"  class="submit" [disabled]="!heroForm.form.valid" (click)="onSubmit(heroForm)">SUBMIT</button>
+</form>
+</ion-list>
+<div class="acc111"><span>Already have account?</span><button ion-button color="red" clear  (click)="signPage();" style="height: 15px;
+  margin: 0;  padding: 0 4px; font-size: 13px;  vertical-align: middle;">SIGN IN</button></div>
+
+</ion-content>

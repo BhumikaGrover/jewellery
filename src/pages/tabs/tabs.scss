@@ -1,0 +1,27 @@
+page-tabs {
+    .badge {
+        border-radius: 4px;
+        color: #fff;
+        background-color: #c4013e;
+    }
+}
+
+.tabs-md .tab-button[aria-selected="true"] .tab-button-icon {
+    color: #c4013e;
+}
+
+.tabs-md .tab-button[aria-selected="true"] {
+    color: #c4013e;
+}
+
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+
+    color: #c4013e;
+}
+.tabs-ios .tab-button[aria-selected=true]{
+
+    color: #c4013e;
+}
+.tab-button-text{
+    font-size: 11px !important;
+}

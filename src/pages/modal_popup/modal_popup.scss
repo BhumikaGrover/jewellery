@@ -1,0 +1,94 @@
+page-modal_popup {
+    
+    .rvew_rate {
+        width: 100%;
+        float: left;
+      }
+      .rvew_rate ul {
+        width: 100%;
+        float: left;
+       
+      }
+      .rvew_rate ul li {
+        display: inline-block;
+        font-size: 20px;
+        margin-right: 10px;
+      }
+ 
+      .area_txt {
+        width: 100%;
+        margin-left: 8px;
+        float: left;
+    }
+ .btn_shot{
+    background-color: #ffc501 !important;
+    border-color: #ffc501 !important;
+    color: #fff !important;
+    border-radius: 4px;
+    padding: 4px 9px;
+    width: auto;
+    float: none;
+    margin: 0 auto;
+    display: table;
+   
+ }
+.bckgr_trans{
+    background:transparent;
+    padding-top: 6px;
+    width: 8%;
+    float: right;
+}
+
+.heading_popup {
+    width: 100%;
+    float: left;
+   
+}
+.rte_bowda {
+    width: 92%;
+    float: left;
+    text-align: center;
+    color: #c4013e;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    padding-top: 6px;
+}
+.mdl_st {
+    width: 100%;
+    float: left;
+   
+    padding-bottom: 18px;
+}
+
+.mdl_logn{
+    left: 0;
+    top: 200px;
+    position: absolute;
+    display: block;
+    width: 80% !important;
+    height: 35% !important;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+
+
+}
+.top_mdl {
+    width:100%;
+    float:left;
+    height:100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.gp_str {
+    width: 100%;
+    float: left;
+}
+.frnt_brd{
+border:1px solid #aaa;
+
+}
+.ion-md-star{
+    color:#c4013e;
+}
+}

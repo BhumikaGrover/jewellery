@@ -1,0 +1,228 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Shipping Details</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background: #f2f2f2;">
+  <ion-list class="log_list midle_lt" style="margin-top:20px;">
+    <form #heroForm="ngForm" novalidate (ngSubmit)="Skipping(heroForm)">
+
+      <h3 class="recvr_txt">Receiver Address</h3>
+      <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="data.name" name="name" placeholder="Full Name" #name="ngModel" required></ion-input>
+      </ion-item>
+      <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <div [hidden]="!name.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+      </div>
+      <ion-item no-padding>
+        <ion-input type="email" [(ngModel)]="data.email" name="email" placeholder="Email" #email="ngModel" pattern='^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$' required></ion-input>
+      </ion-item>
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+        <div [hidden]="!email.errors.pattern" class="alert alert-danger alt_strt7">
+          Invalid email
+         </div>
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="data.phn" name="phn" placeholder="Phone Number" #phn="ngModel" pattern='[0-9]+' required></ion-input>
+      </ion-item>
+      <div *ngIf="phn.errors && (phn.dirty || phn.touched)" class="alert alert-danger">
+        <div [hidden]="!phn.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+        <div [hidden]="!phn.errors.pattern" class="alert alert-danger alt_strt7">
+          Enter a valid phone number
+        </div>
+      </div>
+
+      <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.street" name="street" placeholder="Street Address" #street="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="street.errors && (street.dirty || street.touched)" class="alert alert-danger">
+          <div [hidden]="!street.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+        <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.city" name="city" placeholder="City" #city="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="city.errors && (city.dirty || city.touched)" class="alert alert-danger">
+          <div [hidden]="!city.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+        <ion-item no-padding>
+          <ion-input type="text" placeholder="State e.g. TN,HR etc." [(ngModel)]="data.state" name="state" #state="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="state.errors && (state.dirty || state.touched)" class="alert alert-danger">
+          <div [hidden]="!state.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+  
+        <ion-item no-padding>
+          <ion-input type="text" placeholder="Postal Code e.g 161121" [(ngModel)]="data.pcode" name="pcode" #pcode="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="pcode.errors && (pcode.dirty || pcode.touched)" class="alert alert-danger">
+          <div [hidden]="!pcode.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+  
+        <ion-item no-padding>
+          <ion-input type="text" placeholder="Country Code e.g US,IN,AE etc." [(ngModel)]="data.ccode" name="ccode" #ccode="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="ccode.errors && (ccode.dirty || ccode.touched)" class="alert alert-danger">
+          <div [hidden]="!ccode.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+
+
+
+
+
+
+      <h3 class="recvr_txt">Shipper Address</h3>
+      <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="data.shipname" name="shipname" placeholder="Full Name" #shipname="ngModel" required></ion-input>
+      </ion-item>
+      <div *ngIf="shipname.errors && (shipname.dirty || shipname.touched)" class="alert alert-danger">
+        <div [hidden]="!shipname.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="data.shipemail" name="shipemail" placeholder="Email" #shipemail="ngModel" pattern='^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$' required></ion-input>
+      </ion-item>
+      <div *ngIf="shipemail.errors && (shipemail.dirty || shipemail.touched)" class="alert alert-danger">
+        <div [hidden]="!shipemail.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+        <div [hidden]="!shipemail.errors.pattern" class="alert alert-danger alt_strt7">
+          Invalid E-mail
+         </div>
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" [(ngModel)]="data.shipphn" name="shipphn" placeholder="Phone Number" #shipphn="ngModel"  pattern='[0-9]+' required></ion-input>
+      </ion-item>
+      <div *ngIf="shipphn.errors && (shipphn.dirty || shipphn.touched)" class="alert alert-danger">
+        <div [hidden]="!shipphn.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+        <div [hidden]="!shipphn.errors.pattern" class="alert alert-danger alt_strt7">
+          Enter a valid phone number
+        </div>
+      </div>
+
+
+
+      <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.rstreet" name="rstreet" placeholder="Street Address" #rstreet="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="rstreet.errors && (rstreet.dirty || rstreet.touched)" class="alert alert-danger">
+          <div [hidden]="!rstreet.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+        <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.rcity" name="rcity" placeholder="City" #rcity="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="rcity.errors && (rcity.dirty || rcity.touched)" class="alert alert-danger">
+          <div [hidden]="!rcity.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+  
+        <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.rstate" name="rstate" placeholder="State e.g. TN,HR etc." #rstate="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="rstate.errors && (rstate.dirty || rstate.touched)" class="alert alert-danger">
+          <div [hidden]="!rstate.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+  
+        <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.rpostcode" name="rpostcode" placeholder="Postal Code e.g 161121" #rpostcode="ngModel" required></ion-input>
+        </ion-item>
+        <div *ngIf="rpostcode.errors && (rpostcode.dirty || rpostcode.touched)" class="alert alert-danger">
+          <div [hidden]="!rpostcode.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+  
+        <ion-item no-padding>
+          <ion-input type="text" [(ngModel)]="data.rcountrycode" name="rcountrycode" placeholder="Country Code e.g US,IN,AE etc." #rcountrycode="ngModel"
+            required></ion-input>
+        </ion-item>
+        <div *ngIf="rcountrycode.errors && (rcountrycode.dirty || rcountrycode.touched)" class="alert alert-danger">
+          <div [hidden]="!rcountrycode.errors.required" class="alert alert-danger alt_strt7">
+            This field is required
+          </div>
+        </div>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="Box Width(Centimetre)" [(ngModel)]="data.boxwidth" name="boxwidth" #boxwidth="ngModel" 
+          required></ion-input>
+      </ion-item>
+      <div *ngIf="boxwidth.errors && (boxwidth.dirty || boxwidth.touched)" class="alert alert-danger">
+        <div [hidden]="!boxwidth.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+      
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="Box Height(Centimetre)" [(ngModel)]="data.boxheight" name="boxheight" #boxheight="ngModel"
+           required></ion-input>
+      </ion-item>
+      <div *ngIf="boxheight.errors && (boxheight.dirty || boxheight.touched)" class="alert alert-danger">
+        <div [hidden]="!boxheight.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+       
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="Box Length(Centimetre)" [(ngModel)]="data.boxlength" name="boxlength" #boxlength="ngModel"
+          required></ion-input>
+      </ion-item>
+      <div *ngIf="boxlength.errors && (boxlength.dirty || boxlength.touched)" class="alert alert-danger">
+        <div [hidden]="!boxlength.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+        
+      </div>
+      <ion-item no-padding>
+        <ion-input type="text" placeholder="Box Weight(Kg)" [(ngModel)]="data.boxweight" name="boxweight" #boxweight="ngModel" 
+          required></ion-input>
+      </ion-item>
+      <div *ngIf="boxweight.errors && (boxweight.dirty || boxweight.touched)" class="alert alert-danger">
+        <div [hidden]="!boxweight.errors.required" class="alert alert-danger alt_strt7">
+          This field is required
+        </div>
+       
+      </div>
+
+
+      <button ion-button block type="submit" color="yellow" class="submit sub_fm8" [disabled]="!heroForm.form.valid">Submit Query</button>
+    </form>
+  </ion-list>
+</ion-content>

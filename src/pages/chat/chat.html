@@ -1,0 +1,87 @@
+
+<ion-header>
+
+<ion-navbar>
+    <ion-title>Chat</ion-title>
+</ion-navbar>
+
+<ion-toolbar style="margin-top: 1px;min-height: 40px;">
+    <ion-grid>
+  <ion-row class="user">
+      <!-- <ion-col col-4>Online<sup></sup></ion-col> -->
+      <ion-col col-12>
+         
+        <div class="ur_cnvrston"><span class="wth_cht">Conversation with</span> 
+            <ion-avatar item-start class="jecob_pic" *ngIf="user_details?.profilepicture">
+                <img src="{{user_details?.profilepicture}}">
+              </ion-avatar>
+              <ion-avatar item-start class="jecob_pic" *ngIf="!user_details?.profilepicture">
+                  <img src="{{image_url}}images/membersprofilepic/noprofilepicture.gif">
+                </ion-avatar>
+          
+          <span style="color:#c4013e;">{{user_name}}</span>
+        </div>
+        
+          </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content class="has-footer" style="margin-bottom: 118px;" id="scroll">
+    <div *ngIf="converstaion!=0" class="chatouter">
+<div style="padding:8px;" *ngFor="let Chat_list of myChat"  >
+
+
+<div class="boxchat chat-bubble left">
+
+    <ion-avatar item-start class="user_pic" *ngIf="Chat_list.MSGFROM != user_id">
+      <img *ngIf="other_user"  src="{{image_path}}{{other_user}}">
+      <img *ngIf="!other_user"  src="{{image_path}}noprofilepicture.gif">
+    </ion-avatar>
+
+ 
+  <div class="chat-users" style="position:relative;" *ngIf="Chat_list.MSGFROM != user_id"> 
+    <!-- <div class="chatusername">Srishti</div> -->
+    <p *ngIf="Chat_list.message && Chat_list.postid!=0" [innerHTML]="Chat_list.message" (click)=findWork(Chat_list.postid)></p>
+    <p *ngIf="Chat_list.message && Chat_list.postid==0" [innerHTML]="Chat_list.message"></p>
+    <p *ngIf="Chat_list.Fimagename" (click)="download(Chat_list.Fimagename)" [innerHTML]="Chat_list.showimagename"></p>
+    <span class="time">{{Chat_list.time | date:'MMM d, y h:mm a'}}</span>
+  </div>
+  </div>
+
+  <div class="boxchat chat-bubble right"  *ngIf="Chat_list.MSGFROM == user_id">
+  <div class="chat-users" style="position:relative;"> 
+    <!-- <div class="chatusername">rahul</div> -->
+    <p *ngIf="Chat_list.message" [innerHTML]="Chat_list.message"></p>
+    <p *ngIf="Chat_list.Fimagename" (click)="download(Chat_list.Fimagename)" [innerHTML]="Chat_list.showimagename"></p>
+    <span class="time">{{Chat_list.time | date:'MMM d, y h:mm a'}}</span>
+  </div>
+  </div>
+</div>
+</div>
+
+  <div class="meage_shw" *ngIf="converstaion==0"><img class="no_mess" src="assets/images/mess.jpg">No messages yet! </div>
+</ion-content>
+
+<ion-footer class="footer_bg footer footer-ios ftr_don" style="bottom: 58px;">
+
+<div class="chat_footer ftr_brd"> 
+    <div class="input_send">
+          <ion-textarea placeholder="Type a message" type="text" class="input inp_spc" [(ngModel)]="myInput" spellcheck="true" autocomplete="on"></ion-textarea>
+<div class="cht_sme" [hidden]='fileSelected == 0'>{{showName}}</div>
+     
+    </div>
+
+    <div class="icon_send" (click)="sendmessage(myInput)"  *ngIf="myInput || fileSelected == 1">
+      <ion-icon name="send"></ion-icon>
+    </div>
+    <!-- <div class="fileUpload btn btn-primary" (click)="browseAttachment()"> -->
+    <div class="fileUpload btn btn-primary" (click)="browseAttachment()">
+        <span><ion-icon name="attach"></ion-icon></span>
+        <!-- <input type="file" class="upload" /> -->
+    </div>
+</div>
+</ion-footer>
+

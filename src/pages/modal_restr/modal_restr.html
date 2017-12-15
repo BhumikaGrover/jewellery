@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-title class="tit_rls">Release payment</ion-title>
+
+  <ion-buttons end>
+    <button class="btn_ful" ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+  </ion-buttons>
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+  <ion-list class="log_list">
+    <form #heroForm="ngForm" novalidate>
+      <h3 class="fw">Release payment</h3>
+      <ion-item no-padding>
+        <ion-label style="border:0px; margin-left: 8px;">Payment Type</ion-label>
+        <!-- <ion-input type="text" placeholder="Payment Description" [(ngModel)]="data.des" #des="ngModel" name="des" required></ion-input> -->
+        <ion-select [(ngModel)]="data.des"  name='des' id="des" #des="ngModel" required>
+            <ion-option value="Hold in Escrow">Hold in Escrow (Recommended)</ion-option>
+            <ion-option value="Release Fund">Release Now</ion-option>
+          </ion-select>
+      </ion-item>
+      <div *ngIf="des.errors && (des.dirty || des.touched)" class="alert alert-danger">
+        <div [hidden]="!des.errors.required" class="alert alert-danger">
+          Field required
+        </div>
+      </div>
+
+      <ion-item no-padding>Payment Amount(USD)
+        <ion-input type="number" placeholder="Payment Amount(USD)" [(ngModel)]="data.amount" #amount="ngModel" name="amount" pattern='[0-9]+'
+          required></ion-input>
+      </ion-item>
+      <div *ngIf="amount.errors && (amount.dirty || amount.touched)" class="alert alert-danger">
+        <div [hidden]="!amount.errors.required" class="alert alert-danger">
+          Fill amount
+        </div>
+        <div [hidden]="!amount.errors.pattern" class="alert alert-danger">
+          Enter a valid amount
+        </div>
+      </div>
+      <button ion-button block color="yellow" class="submit" (click)="payment(heroForm)" [disabled]="!heroForm.form.valid">Pay</button>
+    </form>
+  </ion-list>
+</ion-content>

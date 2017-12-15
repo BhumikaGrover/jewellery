@@ -1,0 +1,138 @@
+page-explorelist {
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display:none;
+    margin: auto;
+}
+
+.years {
+    bottom: 0; 
+    color: #fff;
+    display: none;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 17px;
+    font-family: Myriad-Regular;
+    font-size: 18px;
+}
+
+ion-item:hover .overlay{display:block;}
+
+ion-item:hover .years{display:block;}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.market{
+background: #fffcfc;
+width:100%;
+float:left;
+padding: 10px;
+}
+
+.list-md .item-block .item-inner, .list-ios .item-block .item-inner{
+    border-bottom: 0px;
+}
+
+ion-label {margin: 0 !important;}
+
+.lst{ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+padding: 0 0 0 8px;
+margin-bottom: 10px;
+}
+
+.star{
+    color: #ffc300;
+    columns: 5 auto;
+    float: left;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+}
+
+.star li .icon {
+    margin-top: 0;
+}
+
+.usr{
+    border: 1px solid #c4013e;
+
+    border-radius: 50px;
+    padding: 2px;
+}
+
+.usr img{
+    border-radius: 50%;
+    height: 50px;
+    overflow: hidden;
+    width: 50px;
+}
+
+.titles{
+    font-family: Myriad-Bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 15px 0 0 0px;
+    color:#c4013e;
+}
+
+.title_b{ font-family: Myriad-Regular;
+color:#757575;
+}
+.ul {
+    padding: 0px;
+   
+    &.rating li {
+      padding: 5px 10px !important;
+      background: none;
+      color: #ffb400;
+   
+      ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+.fname {
+    text-transform: capitalize;
+}
+ul.rating {
+    width: 100%;
+    float: left;
+    padding: 0;
+}
+ul.rating[_ngcontent-c0] li[_ngcontent-c0] {
+    display: inline;
+    border: 0px;
+    background: none;
+    padding: 5px 10px 5px 0px;
+}
+span.zro_yrs {
+   width: 43%;
+    float: left;
+    text-align: left;
+    padding-right: 10px;
+}
+h3.title_b.tle_yrs {
+        width: 56%;
+    float: left;
+    text-align: left;
+}
+.exper_yr {
+    width: 100%;
+    float: left;
+}
+}

@@ -1,0 +1,10 @@
+<ion-tabs [selectedIndex]="myIndex"  (ionChange)='tabIs($event)'>
+    <ion-tab [root]="tab1Root" tabTitle="Jobs" tabIcon="home" preloadTabs="true"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Message"  [tabBadge]="message_count>0 ? message_count: null" tabIcon="list-box" preloadTabs="true"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="News Feed" tabIcon="notifications" preloadTabs="true"></ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="Explore" tabIcon="people" preloadTabs="true"></ion-tab>
+    <ion-tab [root]="tab5Root" tabTitle="MyProfile" tabIcon="contact" preloadTabs="true"></ion-tab>
+  </ion-tabs>
+
+
+  <!-- (ionChange)='tabIs($event)' -->

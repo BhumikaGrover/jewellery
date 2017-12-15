@@ -1,0 +1,44 @@
+
+<ion-header>
+<ion-navbar>
+    <ion-title>Shipment Service Details</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+<!-- <h3>Service Charge</h3><h4>{{shipping_show.data.charges}}</h4>
+<h3>Service type</h3><h4>{{shipping_show.data.service}}</h4>
+<h2><button (click)="Skipping()">Ready to skip</button></h2> -->
+<ion-grid class="shadow_grd">
+    <ion-row>
+      <ion-col col-6>
+       <div class="srv_cvr">
+  <h3 style="margin-bottom: 0px;">Service charge</h3>
+       </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="srv_cvr">
+            <h3 style="margin-bottom: 0px;">USD {{shipping_show.data.charges}}</h3>
+                 </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <div class="srv_cvr">
+            <h3 style="margin-top: 0px;">Service Type</h3>
+                 </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="srv_cvr">
+            <h3 style="margin-top: 0px;">{{shipping_show.data.service}}</h3>
+                 </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6><button class="rdy_btn" (click)="Skipping()">Ready to ship</button></ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
+

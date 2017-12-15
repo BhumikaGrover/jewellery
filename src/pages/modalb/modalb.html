@@ -1,0 +1,81 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+  <ion-title>Filter</ion-title>
+
+  <ion-buttons end>
+    <button ion-button (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background: #f2f2f2;">
+  <ion-card>
+    <ion-card-header no-padding>
+        
+      <div class="sort">
+      <h3>SORT BY</h3>
+    </div>
+    <ion-item no-padding>
+        <ion-label style="border:0px; margin-left: 8px;">Experience</ion-label>
+        <ion-select [(ngModel)]="value" (ngModelChange)="budget($event)">
+          <ion-option value="ASC">Low to High</ion-option>
+           <ion-option value="DESC">High to Low</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-header>
+    <!-- <ion-card-content no-padding>
+      <ion-scroll scrollX="true">
+  <div class="box_outer">
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/name.png"/>
+      <h4>Name</h4>
+      <div class="overlay"></div> </div>
+  </div>
+  
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/star.png"/>
+      <h4>Rating</h4>
+      <div class="overlay"></div> </div>
+  </div>
+  </div>
+   </ion-scroll>
+    </ion-card-content> -->
+</ion-card> 
+
+<ion-searchbar  [(ngModel)]="myInput" (ionInput)="setFilteredItems($event)" placeholder="Search by Name/Country"></ion-searchbar>
+<ion-list *ngIf="errorValue == 2" >
+    <!-- <ion-item *ngFor="let item of user_list" (click)="selectedcountry(item.country_name)" >
+        
+        {{ item.fullname}}
+      </ion-item> -->
+  <ion-item *ngFor="let item of country_list" (click)="selectedcountry(item.country_name)" >
+    
+    {{ item.country_name}}
+  </ion-item>
+</ion-list>
+
+ <ion-list  *ngIf="errorValue == 0">
+  <ion-item *ngFor="let item of searchArray" (click)="selectedcountry(item.country_name)">
+    {{item.country_name}}
+  </ion-item>
+</ion-list> 
+<!-- <div class="main_market">
+<div class="market">
+  <ion-input type="text" placeholder="Search by Country name"></ion-input>
+  <button ion-button block color="yellow" class="submit">Search</button>
+</div>
+</div> -->
+
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Inbox</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #fff;">
+<div class="main_market" *ngIf="chatting_length==0">
+
+
+  <ion-list>
+    <ion-item class="lst" (click)="chatPage(User_chatting.USERID,User_chatting.username);"  *ngFor="let User_chatting of chatting_listing">
+      <ion-avatar item-start class="usr"  *ngIf="User_chatting.profilepicture">
+        <img src="{{image_path}}/{{User_chatting?.profilepicture}}">
+      </ion-avatar>
+      <ion-avatar item-start class="usr"  *ngIf="!User_chatting.profilepicture">
+        <img src="{{image_path}}/{{no_found}}">
+      </ion-avatar>
+      <button ion-button clear no-margin no-padding class="titles set_cntnt set_locte">{{User_chatting.username}}</button>
+      <span class="nw_msg" *ngIf="User_chatting.unread==1 && User_chatting.fromid != user_id">New</span>
+      <ion-note item-end="" class="note note-ios snt_not">{{User_chatting.time | date:'h:mm  MMM d, y'}}</ion-note>
+      <h3 class="title_b" *ngIf="User_chatting.lastmessage" [innerHTML]="User_chatting.lastmessage"></h3>
+      <h3 class="title_b" *ngIf="!User_chatting.lastmessage" >Attachment</h3>
+    </ion-item>
+
+    <!-- <ion-item class="lst">
+      <ion-avatar item-start class="usr">
+        <img src="assets/images/a.jpg">
+      </ion-avatar>
+      <h2 class="titles">Peter Luck</h2>
+      <h3 class="title_b">Manufacture Enamelling,Mounting</h3>
+    </ion-item>
+
+    <ion-item class="lst">
+      <ion-avatar item-start class="usr">
+        <img src="assets/images/a.jpg">
+      </ion-avatar>
+      <h2 class="titles">Peter Luck</h2>
+      <h3 class="title_b">Manufacture Enamelling,Mounting</h3>
+    </ion-item> -->
+
+  </ion-list>
+
+
+</div>
+<div class="meage_shw" *ngIf="chatting_length==1"> Some internal error. Please try again</div>
+<div  class="meage_shw" *ngIf="chatting_length==2"><img class="no_mess" src="assets/images/mess.jpg">No message Yet !</div>
+</ion-content>
+

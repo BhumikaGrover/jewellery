@@ -1,0 +1,434 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background: #f1f1f1;" >
+
+   <ion-card class="crd" no-margin>
+   
+    <div class="main_crd"><div class="crd_user"><img  [src]="userinfo?.profilepicture"/></div></div>
+
+    <div class="upld">
+    <div class="fileUpload btn btn-primary">
+          <button style="background: transparent;" (click)="presentActionSheet()"><span>Upload Photo</span></button>
+         
+      </div>
+    </div>
+
+  </ion-card>
+
+  <div style="padding:8px;">
+    <div style="background: #fffcfc;float: left;width: 100%;margin-bottom:10px;" >
+  <ion-list class="edit">
+ <form #heroForm="ngForm" (ngSubmit)="profileupdate(heroForm)" novalidate>
+  <ion-item>
+    <ion-input type="text" placeholder="First Name" [(ngModel)]="userInfo.fname" name="fname"  #fname="ngModel" required></ion-input>
+  </ion-item>
+  <div *ngIf="fname.errors && (fname.dirty || fname.touched)" class="alert alert-danger red-alt">
+    <div [hidden]="!fname.errors.required" class="alert alert-danger red-alt">
+      First name is required
+     </div>
+     <!-- <div [hidden]="!fname.errors.pattern" class="alert alert-danger">
+      Only alphabets are allowed
+     </div> -->
+    </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="userInfo.lastname" name="lastname"   #lastname="ngModel" required></ion-input>
+  </ion-item>
+  <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched)" class="alert alert-danger red-alt">
+    <div [hidden]="!lastname.errors.required" class="alert alert-danger red-alt">
+      Last name is required
+     </div>
+     <!-- <div [hidden]="!lastname.errors.pattern" class="alert alert-danger">
+      Only alphabets are allowed
+     </div> -->
+    </div>
+  
+<ion-item>
+    <ion-input type="text" placeholder="Username" [readonly]="true" [(ngModel)]="userInfo.username" name="username" minlength="4" maxlength="15" #username="ngModel" required></ion-input>
+  </ion-item>
+  <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger red-alt">
+    <div [hidden]="!username.errors.required" class="alert alert-danger red-alt">
+      Username is required
+     </div>
+  <div [hidden]="!username.errors.minlength" class="alert alert-danger red-alt">
+     Minimum 4 character
+     </div> 
+  </div>
+   <ion-item>
+    <ion-input placeholder="Email"[(ngModel)]="userInfo.email" name="email"  type="email"  [readonly]="true"  #email="ngModel" required pattern='^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'></ion-input>
+  </ion-item>
+  <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger red-alt">
+    <div [hidden]="!email.errors.required" class="alert alert-danger red-alt">
+    email is required
+   </div>
+   <div [hidden]="!email.errors.pattern" class="alert alert-danger red-alt">
+    Invalid email
+   </div>
+ </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Address" [(ngModel)]="userInfo.address" name="address" #address="ngModel"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-input type="text" placeholder="Designation" [(ngModel)]="userInfo.designation" name="designation" #designation="ngModel" ></ion-input>
+  </ion-item>
+
+<!-- 
+<ion-item>
+    <ion-label>Manufacture</ion-label>
+    <ion-select [(ngModel)]="gaming">
+      <ion-option value="nes">NES</ion-option>
+      <ion-option value="n64">Nintendo64</ion-option>
+      <ion-option value="ps">PlayStation</ion-option>
+      <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-option value="saturn">Sega Saturn</ion-option>
+      <ion-option value="snes">SNES</ion-option>
+    </ion-select>
+  </ion-item> -->
+
+    <ion-item>
+        <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="userInfo.country"> 
+            <div class="input-label gndr_mle">
+         Country
+         </div> </ion-label>
+    <!-- <ion-label>Country</ion-label> -->
+    <ion-select [(ngModel)]="userInfo.country"  name='country'  #country="ngModel">
+     
+      <ion-option *ngFor="let countrys of countrylist" [value] = "countrys?.country_code" >{{countrys?.country_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input type="text" placeholder="Skills" [(ngModel)]="userInfo.skills" name="skills"  #skills="ngModel"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input type="text" placeholder="Years Of  Experience"  [(ngModel)]="userInfo.experiance" name="experiance" #experiance="ngModel"></ion-input>
+  </ion-item>
+
+   <!-- <ion-grid class="rd" no-padding>
+  <ion-row radio-group no-padding> 
+    <ion-col col-4 no-padding>Gender</ion-col>
+    <ion-col col-4 no-padding>
+      <ion-label style="margin: 0;float: left;padding-right: 10px;">Male</ion-label>
+      <ion-radio  value="go"></ion-radio>
+    </ion-col>
+    <ion-col col-4 no-padding>
+      <ion-label style="margin: 0;float: left;padding-right: 10px;">Female</ion-label>
+      <ion-radio value="rust"></ion-radio>
+    </ion-col>
+  </ion-row>
+</ion-grid>  -->
+ <ion-item >
+    <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="userInfo.gender"> 
+        <div class="input-label gndr_mle">
+    
+     </div> </ion-label>
+    <!-- <ion-label>Gender</ion-label> -->
+    <ion-select [(ngModel)]="userInfo.gender" name="gender"  #gender="ngModel">
+       
+      <ion-option value="male">Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+    </ion-select>
+  </ion-item>
+
+    <ion-item>
+    <ion-input type="number" placeholder="Contact" [(ngModel)]="userInfo.phone" name="phone"  #phone="ngModel"></ion-input>
+  </ion-item> 
+
+
+
+
+   <ion-item>
+    <ion-input type="text" placeholder="Background Info" [(ngModel)]="userInfo.descripiton" name="descripiton"  #descripiton="ngModel"></ion-input>
+  </ion-item> 
+   <!--<p *ngIf="!isValid('descripiton')" danger padding-left>Background Info required</p>-->
+<ion-item>
+    <ion-input type="text" placeholder="Role" [(ngModel)]="userInfo.role" [readonly]="true"  name='role' #role="ngModel" ></ion-input>
+  </ion-item> 
+   <!-- <p *ngIf="!isValid('role')" danger padding-left>Background Info required</p> -->
+    <!-- <ion-item>
+    <ion-label>Role</ion-label>
+    <ion-select [(ngModel)]="userInfo.role"  formControlName='role' id="role">
+      <ion-option value="Consumer">Consumer</ion-option>
+      <ion-option value="Manufacturer">Manufacturer</ion-option>
+       <ion-option value="Designer">Designer</ion-option>
+        <ion-option value="Supplier">Supplier</ion-option>
+         <ion-option value="Retailer">Retailer</ion-option>
+    </ion-select>
+    </ion-item> -->
+ 
+<ion-grid no-padding class="soc">
+<div *ngIf="role_assign != 1">
+<h3 class="title" style="padding:0 0 0 8px; width:100%; float:left; margin-top:20px;">Social</h3>
+
+  <ion-row no-padding style="width:100%;">
+
+    <ion-col col-12>
+   <ion-item no-padding class="social_logo">
+     <ion-icon class="log_con" item-start><img src="assets/images/fb1.png" /></ion-icon>
+    <ion-input type="text" placeholder=" Enter your facebook address" [(ngModel)]="userInfo.facebook" name="facebook" #facebook="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+
+     <ion-col col-12>
+   <ion-item class="social_logo log_inst" >
+     <ion-icon class="log_con insta_galry" item-start><img src="assets/images/insta2.png" style="width: 86%;
+      float: left;
+      "/></ion-icon>
+    <ion-input type="text" placeholder="Enter your instagram address" [(ngModel)]="userInfo.insta" name="insta" #insta="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row no-padding>
+
+    <ion-col col-12>
+   <ion-item no-padding class="social_logo">
+     <ion-icon item-start><img src="assets/images/twitter3.png" /></ion-icon>
+    <ion-input type="text" placeholder="Enter your twitter address"  [(ngModel)]="userInfo.twitter" name="twitter"  #twitter="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+
+     <ion-col col-12>
+   <ion-item no-padding class="social_logo">
+     <ion-icon item-start><img src="assets/images/youtube4.png" /></ion-icon>
+    <ion-input type="text" placeholder="Enter your youtube address" [(ngModel)]="userInfo.youtube" name="youtube"  #youtube="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row no-padding>
+
+    <ion-col col-12>
+   <ion-item no-padding class="social_logo">
+     <ion-icon item-start><img src="assets/images/pinit5.png" class="pint_4"/></ion-icon>
+    <ion-input type="text" placeholder="Enter your pinterest address" [(ngModel)]="userInfo.pinta" name="pinta"  #pinta="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+  <ion-col col-12>
+   <ion-item no-padding class="social_logo">
+     <ion-icon item-start><img src="assets/images/linkedin6.png" /></ion-icon>
+    <ion-input type="text" placeholder="Enter your linkedin address" [(ngModel)]="userInfo.linkdin" name="linkdin"  #linkdin="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>  
+  
+
+  </ion-row>
+   <ion-col col-12 no-padding >
+   <ion-item no-padding class="social_logo sc">
+     <!-- <ion-icon item-start style="font-size: 25px; padding-left: 9px; padding-right: 4px;"  name="md-link"></ion-icon> -->
+     <ion-icon class="glob_con" item-start><img class= "glob_entr" src="assets/images/ModernXP-73-Globe-icon.png" /></ion-icon>
+    <ion-input type="text" placeholder="Enter your website address" [(ngModel)]="userInfo.website" name="website"  #website="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+   </div>
+
+   <ion-row no-padding>
+    <ion-col col-12 no-padding >
+   <ion-item no-padding class="social_logo sc" style="height:36px;">
+     <ion-icon item-start class="insta_pypl"><img src="assets/images/paypal.png" /></ion-icon>
+    <ion-input type="text" placeholder="Enter your payfort address" [(ngModel)]="userInfo.paypal" name="paypal"  #paypal="ngModel"></ion-input>
+  </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+<ion-grid no-padding class="soc">
+
+  <h3 class="title" style="padding:0 0 0 8px; width:100%; float:left; margin-top:20px;">Bank details</h3>
+  <ion-item>
+    <ion-input type="text" placeholder="Name" [(ngModel)]="userInfo.bname" name="bname"  #bname="ngModel" required></ion-input>
+  </ion-item>
+
+
+  
+  <div *ngIf="bname.errors && (bname.dirty || bname.touched)" class="alert alert-danger">
+       <div [hidden]="!bname.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Nick Name " [(ngModel)]="userInfo.bnikname" name="bnikname"  #bnikname="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="bnikname.errors && (bnikname.dirty || bnikname.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bnikname.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <!-- <ion-item>
+    <ion-input type="text" placeholder="Country" [(ngModel)]="userInfo.bcountry" formControlName="bcountry"></ion-input>
+  </ion-item> -->
+  <ion-item>
+      <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="userInfo.bcountry"> 
+          <div class="input-label gndr_mle">
+       Country
+       </div> </ion-label>
+    <!-- <ion-label>Country</ion-label> -->
+    <ion-select [(ngModel)]="userInfo.bcountry"  name='bcountry' #bcountry="ngModel" >
+      
+      <ion-option *ngFor="let countrys of countrylist" [value] ="countrys?.country_code" >{{countrys?.country_name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <!-- <div *ngIf="bcountry.errors && (bcountry.dirty || bcountry.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bcountry.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div> -->
+  
+  <ion-item>
+    <ion-input type="text" placeholder="Beneficiary Bank" [(ngModel)]="userInfo.bbank" name="bbank"  #bbank="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="bbank.errors && (bbank.dirty || bbank.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bbank.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Branch" [(ngModel)]="userInfo.branch" name="branch"  #branch="ngModel" required></ion-input>
+  </ion-item>
+  <div *ngIf="branch.errors && (branch.dirty || branch.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!branch.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="City" [(ngModel)]="userInfo.bcity" name="bcity"  #bcity="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="bcity.errors && (bcity.dirty || bcity.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bcity.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Bank Code" [(ngModel)]="userInfo.bcode" name="bcode"  #bcode="ngModel" required></ion-input>
+  </ion-item>
+  <div *ngIf="bcode.errors && (bcode.dirty || bcode.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bcode.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Swift Code" [(ngModel)]="userInfo.bswift" name="bswift"  #bswift="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="bswift.errors && (bswift.dirty || bswift.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bswift.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Intermediary Bank" [(ngModel)]="userInfo.bibank" name="bibank"  #bibank="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="bibank.errors && (bibank.dirty || bibank.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!bibank.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+     <ion-item>
+        <ion-label  class="item item-input item-select labrl_cmprs"  [hidden]="userInfo.baccount"> 
+            <div class="input-label gndr_mle">
+                Account No./IBAN
+         </div> </ion-label>
+    <!-- <ion-label>Account No./IBAN</ion-label> -->
+    <ion-select [(ngModel)]="userInfo.baccount" name="baccount"  #baccount="ngModel" required>
+        <!-- <ion-option value="" selected>Account No./IBAN</ion-option> -->
+      <ion-option value="1">Account No</ion-option>
+      <ion-option value="2">IBAN</ion-option>
+    </ion-select>
+ </ion-item>
+ <div *ngIf="baccount.errors && (baccount.dirty || baccount.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!baccount.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  <ion-item>
+    <ion-input type="text" placeholder="Account Number" [(ngModel)]="userInfo.account_number" name="account_number"  #account_number="ngModel" required></ion-input>
+  </ion-item>
+ <div *ngIf="account_number.errors && (account_number.dirty || account_number.touched)" class="alert alert-danger red-alt">
+       <div [hidden]="!account_number.errors.required" class="alert alert-danger red-alt">
+      This field is required
+        </div>
+     </div>
+  </ion-grid>
+
+<button type="submit" ion-button small color="yellow" class="submit" style="width: 100%;float: left;"  [disabled]="!heroForm.form.valid"> Save</button>
+ </form>
+  </ion-list>
+<div *ngIf="role_assign != 1">
+<div class="gal">
+  <h3 class="title" >Gallery</h3>
+
+<div class="uplds"  (click)="selectgalleryimg()">
+    <button style="background:transparent;" class="fileUpload btn btn-primary">
+         <span >Browse </span><ion-icon style=" position: absolute; right: 10px; top: 0;" name="attach"></ion-icon>
+      </button>
+</div>
+</div>
+
+<ion-scroll scrollX="true">
+  <div class="box_outer" >
+  <div class="img_box" *ngFor="let gallery of picgallery">
+ 	  <div class="card">
+      <img [src]="gallery?.imgurl"  />
+      <div class="overlay"></div>
+      <button ion-button block  (click)="deleteimg(gallery?.id)" class="cros"><ion-icon name="close"></ion-icon></button>
+    </div>
+       
+  </div>
+  
+  <!-- <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div>
+  <div class="img_box">
+ 	  <div class="card">
+      <img src="assets/images/a.jpg"/>
+      <div class="overlay"></div> </div>
+  </div> -->
+  </div>
+   </ion-scroll>
+</div>
+  <!-- <div class="sub">
+    <button ion-button small color="yellow" class="submit" (click)="selectgalleryimg()">Browse</button>
+  </div> -->
+
+
+
+  
+    </div>
+  </div>
+
+</ion-content>
+
+

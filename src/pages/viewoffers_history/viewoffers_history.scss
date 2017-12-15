@@ -1,0 +1,207 @@
+page-viewoffers_history {
+
+.crd_cnt p {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 13px;
+    padding: 3px 0;
+}
+
+.crd_cnt{
+    padding: 0 8px 8px;
+}
+
+.crd_head {
+    padding: 8px 8px 0;
+}
+
+.crd_head p {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 19px;
+}
+
+.country_b ion-col {
+    color: #c4013e;
+    float: left;
+    font-family: Myriad-Semibold;
+    font-size: 13px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.country_b ion-col > span {
+    color: #757575;
+}
+
+.jecob_pic {
+    width:24%;
+    float:left;
+}
+
+.jecob_pic img {
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+}
+
+.submit{
+    margin: 0 auto;
+    text-transform: capitalize;
+    width: 40%;
+    font-family: Myriad-Bold;
+}
+
+
+.card {
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+////////////////////////////////////////////
+
+.ofer_mine {
+  width: 100%;
+  float: left;
+}
+.ofer_mine h4 {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #c4013e;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.offer_text {
+    float: left;
+    margin: 10px;
+    border-radius: 2px;
+    width: calc(100% - 20px);
+    font-size: 1.4rem;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.txt_desc {
+    width: 100%;
+    float: left;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+.desc_txt {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    font-size: 13px;
+    color: #757575;
+    font-weight: 500;
+}
+.lst_ofer {
+    width: 100%;
+    float: left;
+}
+.lst_ofer ul {
+    width: 100%;
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 6px 0px;
+}
+.lst_ofer ul li {
+    width: 100%;
+    float: left;
+    margin-bottom: 13px;
+    
+}
+.lst_ofer ul li span {
+  width: 46%;
+float: left;
+color: #757575;
+font-weight: 500;
+font-size: 13px;
+
+}
+  .bill_head{
+  
+  color: #c4013e;
+  font-size: 12px;
+  font-weight: 500;
+  width: 47%;
+  float: left;
+  margin: 0;
+  }
+  .pic_cvr {
+      width: 40px;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      height: 40px;
+      border-radius: 50px;
+      margin-top: 20px;
+  }
+  .pic_cvr img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: auto;
+  }
+  .pic_img {
+      width: auto;
+      line-height: 82px;
+      padding-left: 8px;
+      font-weight: 500;
+      color: #757575;
+      font-size: 12px;
+  }
+  .atch_cvr {
+      width: 100%;
+      float: left;
+  }
+  .atch_cvr h3 {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: #c4013e;
+  }
+//   .attach_pic {
+//     float: left;
+//     height: 50px;
+//     margin-bottom: 0px;
+//     overflow: hidden;
+//     position: relative;
+//     width: 50px;
+// }
+.attach_pic {
+    width: 100%;
+    float: left;
+    text-align: left;
+    background: #f6dee5;
+    font-size:12px;
+}
+.attach_pic > img {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+  span.dnl_load {
+    width: auto;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+}
+h4.vew_nme {
+    width: 75%;
+    float: left;
+    color: #757575;
+}
+}
+

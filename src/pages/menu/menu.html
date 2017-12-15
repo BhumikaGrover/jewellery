@@ -1,0 +1,84 @@
+<ion-menu [content]="content">
+    
+    <ion-header class="head_mnu">
+    
+      <ion-navbar>
+        <ion-title>Menu</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content class="sidebar"> 
+    <!-- <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+        {{ p.title }}
+      </button>
+    </ion-list> -->
+    <div>
+      <ion-item class="mn">
+        <ion-avatar item-start class="usr">
+          <img [src]="profile">
+        </ion-avatar>
+        <!-- <h2>Cher</h2> -->
+        <p style="color:#fff; text-transform: capitalize;">{{fname}}</p>
+      </ion-item>
+    </div>
+    
+    <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+            {{p.title}}
+          </button>
+          <!-- <button ion-item menuClose >
+           Special
+        </button> -->
+        <button ion-item menuClose (click)=hstr_ofr()>
+          History (Offers)
+          </button>
+        <button ion-item menuClose (click)=changepaww()>
+           Change Password
+        </button>
+        <button ion-item menuClose (click)=editinfo()>
+        Edit Profile
+        </button>
+        <button ion-item menuClose (click)=postjob()>
+        Post a Job
+        </button>
+       <button ion-item menuClose (click)=payments()>
+        Payments
+        </button>
+        <!--<button ion-item menuClose (click)="msgtab()">
+          Message ({{message_count}})
+          </button>-->
+      <button ion-item menuClose (click)=contact_us()>
+       Contact Us
+        </button>
+       <button ion-item menuClose (click)=info()>
+        Information
+        </button>
+
+        <!-- <button ion-item menuClose (click)=hstr_ofr()>
+          History(Offer)
+          </button> -->
+        
+          
+       <button ion-item menuClose (click)=signout()>
+        Signout
+        </button>
+        
+    
+    </ion-list>
+    
+    </ion-content>
+    <ion-footer class="bottom">
+      <ion-toolbar>
+        <div class="ftr">
+          <img style="width:100px;" src="assets/images/logow.png">
+          <p style="color:#fff;">Copyrights 2017 Bowdaa Technologies - FZE</p>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+    
+    </ion-menu>
+    
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

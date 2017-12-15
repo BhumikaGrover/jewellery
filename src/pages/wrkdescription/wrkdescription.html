@@ -1,0 +1,373 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Job Description</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background:#f2f2f2;">
+
+  <ion-card>
+  <ion-card-header class="crd_head">
+ <p no-margin>{{job_details_dec?.title}}</p>
+    <button ion-button="" clear="" icon-only="" no-margin="" class="btn_regulr" (click)="Share(job_details_dec?.REQUESTID)">
+        <ion-icon name="md-share"></ion-icon>
+        </button>
+  </ion-card-header>
+  <ion-card-content class="crd_cnt">
+    <p no-margin>{{job_details_dec?.scriptolutiondesc}}</p>
+  </ion-card-content>
+</ion-card>
+
+ <ion-card>
+  <ion-card-content class="crd_cnt">
+   
+    <ion-grid class="country_b">
+    <ion-row>
+
+     <ion-col col-12>
+        <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-6>Posted By:</ion-col>
+              <ion-col col-6><span no-margin style="width:100%; float:left;">
+              <ion-avatar class="jecob_pic" item-start *ngIf="job_details_dec?.profilepicture">
+                <img src="{{image_path}}{{job_details_dec?.profilepicture}}">
+              </ion-avatar>
+              <ion-avatar class="jecob_pic" item-start *ngIf="!job_details_dec?.profilepicture">
+                <img src="{{image_path}}noprofilepicture.gif">
+              </ion-avatar>
+              <h4 class="vew_nme">{{job_details_dec?.username}}</h4>
+              </span></ion-col>
+              </ion-row>
+        </ion-grid>
+      </ion-col>
+
+      <ion-col col-12>
+       <ion-grid no-padding>
+        <ion-row>
+             
+          <ion-col col-6 *ngIf="Current_date==date_format">Posted Time:</ion-col>
+          <ion-col col-6 *ngIf="Current_date!=date_format">Posted Date:</ion-col>
+              <ion-col col-6> <span no-margin *ngIf="Current_date==date_format">{{job_details_dec?.created | date:'h:mm a'}}</span>
+                <span no-margin *ngIf="Current_date!=date_format">{{job_details_dec?.created | date:'d/MM/yyyy'}}</span>
+              </ion-col>
+              </ion-row>
+              </ion-grid>
+              </ion-col>
+        </ion-row>
+
+    <ion-row>
+       <ion-col col-12 *ngIf="job_details_dec?.element">
+      <ion-grid no-padding>
+          <ion-row >
+            <ion-col col-6>Element:</ion-col>
+            <ion-col col-6>
+              <span no-margin>{{job_details_dec?.element}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-col>
+      <ion-col col-12 *ngIf="job_details_dec?.quantity">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Quantity:</ion-col>
+            <ion-col col-6><span no-margin>{{job_details_dec?.quantity}}</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row [hidden]="job_details_dec?.element =='Silver'">
+       <ion-col col-12 *ngIf="job_details_dec?.carat">
+      <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Carat:</ion-col>
+            <ion-col col-6>
+              <span no-margin>{{job_details_dec?.carat}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+
+      <ion-col col-12 *ngIf="job_details_dec?.color">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Color:</ion-col>
+            <ion-col col-6><span no-margin>{{job_details_dec?.color}}</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+       <ion-col col-12 *ngIf="job_details_dec?.scriptolutionprice">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Budget (USD):</ion-col>
+            <ion-col col-6><span no-margin>{{job_details_dec?.scriptolutionprice}}</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      
+      <ion-col col-12 *ngIf="job_details_dec?.scriptolutiondays">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Delivery Duration:</ion-col>
+            <ion-col col-6><span no-margin>{{job_details_dec?.scriptolutiondays}} Days</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+       <ion-col col-12>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Job Status:</ion-col>
+            <ion-col col-6><span no-margin *ngIf="job_details_dec?.status=='0'">New</span>
+           <span no-margin *ngIf="job_details_dec?.status=='1'">Active</span>
+           <span no-margin  *ngIf="job_details_dec?.status!='0' && job_details_dec?.status!='1'">Closed</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      
+      <ion-col col-12 *ngIf="job_details_dec?.totaloffers">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6>Proposal:</ion-col>
+            <ion-col col-6><span no-margin>{{job_details_dec?.totaloffers}} Offers</span></ion-col>
+          </ion-row>
+          
+
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+
+<ion-row [hidden]='fileSelected == 0'>
+    <ion-col col-4 >Download Attachment</ion-col>
+
+    <ion-col col-8 text-right>
+        <ion-avatar class="atch_dnld" item-start *ngIf="this.subbmit_image==0">
+            <img src="{{doc_submit}}{{job_details_dec?.image}}" (click)="presentImage(doc_submit,job_details_dec?.image)" imageViewer>
+          </ion-avatar>
+      <button class="attach_pic"  (click)="download()">{{job_details_dec?.image}}</button>
+    </ion-col>
+</ion-row>
+
+<ion-icon name="globe" class="glb"><span class="rpn_cty">{{job_details_dec?.country_name}}</span></ion-icon>
+<button  [hidden]="user_id==job_details_dec?.USERID || lenght_offer!=0"ion-button small color="yellow" class="submit" (click)="submitproposalPage(job_details_dec.REQUESTID,job_details_dec.USERID);">Submit Proposal</button>
+<button ion-button small color="yellow" class="submit" (click)="viewoffersPage(job_details_dec?.REQUESTID)" *ngIf='job_details_dec?.USERID == user_id && job_details_dec?.totaloffers != 0'>View Offers</button>
+</ion-grid>
+
+  </ion-card-content>
+</ion-card>
+<div class="ofer_mine" *ngIf="lenght_offer!=0">
+    <h4>My Offer</h4>
+    <div *ngFor="let offer_show of my_offer">
+    <div class="offer_text">
+      <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+     <h5 class="txt_desc">Description</h5>
+     <p class="desc_txt">{{offer_show?.scriptolutionmsg}}</p>
+     <div class="pic_cvr" *ngIf="offer_show?.profilepicture">
+       <img src="{{image_path}}{{offer_show?.profilepicture}}" >
+     </div>
+     <div class="pic_cvr" *ngIf="!offer_show?.profilepicture">
+        <img src="{{image_path}}noprofilepicture.gif" >
+      </div>
+       <span class="pic_img">{{offer_show?.username}}</span>
+      </ion-col>
+       <ion-col col-12>
+         <div class="lst_ofer">
+           <ul style="margin:-5px 0px;">
+            <li><p class="bill_head">Offer Amount (USD):</p><span>{{offer_show?.bid_amount}}</span></li>
+            <li><p class="bill_head">Delivery Duration:</p><span> {{offer_show?.delivery_day}} Days</span></li>
+           </ul>
+         </div>
+       </ion-col>
+    </ion-row>
+    <ion-row *ngIf="offer_show?.file">
+        <ion-col col-4 style="font-size:13px; color: #c4013e; font-weight: 500; padding-top:0px;">Attached File</ion-col>
+        <ion-col col-8 text-right>
+        <ion-avatar class="atch_dnld" item-start *ngIf="show_image==0">
+            <img src="{{doc_path}}{{offer_show?.file}}" (click)="presentImage(doc_path,offer_show?.file)" imageViewer>
+          </ion-avatar>
+          <button class="attach_pic"  (click)="download_myoffer(offer_show?.file)">{{offer_show?.file}}</button>
+         </ion-col>
+    </ion-row>
+    <ion-row *ngIf="offer_show?.status==3">
+      <ion-col col-4><span class="fnd_vte">Status</span></ion-col>
+      <ion-col col-8>
+        <div class="rte_crs lngh_cr"><button class="btn btn-default txt_bld">You have accepted the invitation.</button></div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="offer_show?.status==4">
+        <ion-col col-4><span class="fnd_vte">Status:</span></ion-col>
+        <ion-col col-8>
+          <div class="rte_crs lngh_cr"><button class="btn btn-default txt_bld">You have rejected the invitation.</button></div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="offer_show?.status==5">
+          <ion-col col-4><span class="fnd_vte">Status:</span></ion-col>
+          <ion-col col-8>
+            <div class="rte_crs lngh_cr"><button class="btn btn-default txt_bld">The Project has been initiated.</button></div>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="offer_show?.status==6">
+            <ion-col col-4><span class="fnd_vte">Status:</span></ion-col>
+            <ion-col col-8>
+              <div class="rte_crs lngh_cr"><button class="btn btn-default txt_bld">The Project has been Completed.</button></div>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="offer_show?.status==2">
+              <ion-col col-4><span class="fnd_vte">Invitation:</span></ion-col>
+              <ion-col col-8>
+                <div class="rte_crs" (click)="invitation(offer_show.SCRIPTOLUTIONOFID,offer_show.request_userid,offer_show.REQUESTID,'accept')"><button class="btn btn-default txt_lv">Accept</button></div>
+                <div class="rte_crs"  (click)="invitation(offer_show.SCRIPTOLUTIONOFID,offer_show.request_userid,offer_show.REQUESTID,'reject')"><button class="btn btn-default txt_lv">Reject</button></div>
+              </ion-col>
+            </ion-row>
+       
+    <!-- <div *ngIf="offer_show?.status==2">Invitation
+     
+      <button class="txt_desc" (click)="invitation(offer_show.SCRIPTOLUTIONOFID,offer_show.request_userid,offer_show.REQUESTID,'accept')">Accept</button>
+      <button class="txt_desc"  (click)="invitation(offer_show.SCRIPTOLUTIONOFID,offer_show.request_userid,offer_show.REQUESTID,'reject')">Reject</button>
+    </div> -->
+    <!-- <div *ngIf="offer_show?.status==3">Invitation
+        <button class="txt_desc">You have accepted the invitation .</button>
+      </div>
+      <div *ngIf="offer_show?.status==4">Invitation
+          <button class="txt_desc">You have rejected the invitation.</button>
+        </div>
+        <div *ngIf="offer_show?.status==5">Invitation
+            <button class="txt_desc">The Project has been initiated.</button>
+          </div>
+          <div *ngIf="offer_show?.status==6">Invitation
+              <button class="txt_desc">The Project has been Completed.</button>
+            </div> -->
+  </ion-grid>
+  <div class="rlese_btn">
+      <button class="btn btn-default tcking_lft" style="background-color:transparent;" *ngIf="release_lenght !=0">Payment Details </button></div>
+      <ion-grid style="padding:0px;" *ngIf="release_lenght !=0">
+          <ion-row style="margin: 0 8px;" >
+            <ion-col col-1 no-padding style="padding-bottom:0px;">
+            <div class="table_stle">
+              <span class="tble_wdht tble_colmn">S. No.</span>
+            </div>
+          </ion-col>
+    
+            <ion-col col-4 no-padding style="padding-bottom:0px;">
+              <div class="table_stle">
+                <span class="tble_wdht tble_colmn">Descrition</span>
+              </div>
+            </ion-col>
+    
+              <ion-col col-3 no-padding style="padding-bottom:0px;">
+                <div class="table_stle">
+                  <span class="tble_wdht tble_colmn">Price</span>
+                  <h5 class="us_stng">(USD)</h5>
+                </div>
+              </ion-col>
+                <ion-col col-4 no-padding style="padding-bottom:0px;">
+                  <div class="table_stle">
+                    <span class="tble_wdht">Date/Time</span>
+                  </div>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row style="    margin-left: 8px; margin-right: 8px;" *ngFor="let release of release_payment let i=index">
+            <ion-col col-1 no-padding style="padding-top:0px;">
+              <div class="table_stle">
+                <span class="tble_rw">{{i+1}}</span>
+              </div>
+            </ion-col>
+      
+              <ion-col col-4 no-padding style="padding-top:0px;">
+                <div class="table_stle">
+                  <span class="tble_rw">{{release.amount_description}}</span>
+                </div>
+              </ion-col>
+      
+                <ion-col col-3 no-padding style="padding-top:0px;">
+                  <div class="table_stle">
+                    <span class="tble_rw">{{release.paymenttovender}} </span>
+                  </div>
+                </ion-col>
+      
+                  <ion-col col-4 no-padding style="padding-top:0px;">
+                    <div class="table_stle">
+                      <span class="tble_rw">{{release.created | date:'MMM d, yyyy h:mm'}}</span>
+                    </div>
+                  </ion-col>
+          </ion-row>
+        </ion-grid>
+   <!-- <div *ngIf="release_lenght !=0">Release payment
+            <div *ngFor="let release of release_payment"> 
+          <div>Sr no. 1</div>
+          <div>Description {{release.amount_description}}</div>
+          <div>Price {{release.amount}} </div>
+          <div>Due Date {{release.created | date:'MMM d, yyyy h:mm'}} </div>
+          </div>
+        </div> -->
+        <div class="rlese_btn">
+            <button class="btn btn-default button_ylw" style="background-color:transparent;" *ngIf="shipping_lenght !=0">Tracking Details  </button></div>
+            <ion-grid style="padding:0px;" *ngIf="shipping_lenght !=0">
+                <ion-row style="margin: 0 8px;">
+                  <ion-col col-1 no-padding style="padding-bottom:0px;">
+                  <div class="table_stle">
+                    <span class="tble_wdht tble_colmn">S.No.</span>
+                  </div>
+                </ion-col>
+          
+                  <ion-col col-4 no-padding style="padding-bottom:0px;">
+                    <div class="table_stle">
+                      <span class="tble_wdht tble_colmn">Tracking Number</span>
+                    </div>
+                  </ion-col>
+          
+                    <ion-col col-3 no-padding style="padding-bottom:0px;">
+                      <div class="table_stle">
+                        <span class="tble_wdht tble_colmn">Track Here</span>
+                      </div>
+                    </ion-col>
+                      <ion-col col-4 no-padding style="padding-bottom:0px;"> 
+                        <div class="table_stle">
+                          <span class="tble_wdht tble_colmn">Date/Time</span>
+                        </div>
+                  </ion-col>
+                </ion-row>
+          
+                <ion-row style="    margin-left: 8px; margin-right: 8px;" *ngFor="let release_ship of my_shipping; let i=index">
+                  <ion-col col-1 no-padding style="padding-top:0px;">
+                    <div class="table_stle">
+                      <span class="tble_rw">{{i+1}}</span>
+                    </div>
+                  </ion-col>
+            
+                    <ion-col col-4 no-padding>
+                      <div class="table_stle" style="padding-top:0px;">
+                        <span class="tble_rw">{{release_ship.tracking_number}}</span>
+                      </div>
+                    </ion-col>
+            
+                      <ion-col col-3 no-padding style="padding-top:0px;" click)="fedex()">
+                        <div class="table_stle">
+                          <span class="tble_rw" style="color:#5563c9; text-decoration: underline;">Click here</span>
+                        </div>
+                      </ion-col>
+            
+                        <ion-col col-4 no-padding style="padding-top:0px;">
+                          <div class="table_stle">
+                            <span class="tble_rw">{{release_ship.created | date:'MMM d, yyyy h:mm'}}</span>
+                          </div>
+                        </ion-col>
+                </ion-row>
+              </ion-grid>
+    </div>
+    </div>
+  </div>
+</ion-content>

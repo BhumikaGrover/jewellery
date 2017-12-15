@@ -1,0 +1,68 @@
+page-tab4 {
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+ .titles{
+    font-family: Myriad-Bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0 0 8px;
+    text-align: center;
+}
+
+.submit {
+    font-family: Myriad-Bold;
+    font-size: 12px;
+    margin: 0 0 8px;
+    text-transform: capitalize;
+}
+
+.market
+{background: #fffcfc;
+width:100%;
+float:left;
+padding: 6px;
+}
+
+.cardz {
+    float: left;
+    width: 100%;
+}
+
+.cardz .card img {
+    display: inline-block;
+    width: auto;
+    float: none;
+    margin: 0 auto;
+}
+
+.cardz .card{
+    float: left;
+    margin: 7px 2.5%;
+    text-align: center;
+    width: 45%;
+}
+
+.fnd {
+    font-size: 11px;
+    height: 1rem;
+    text-decoration: underline;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.cardz .card .card-content{
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+
+.cardz .card .card-content p {
+    color: #c4013e;
+    font-family: Myriad-Bold;
+}
+
+}

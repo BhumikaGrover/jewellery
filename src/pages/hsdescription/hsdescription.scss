@@ -1,0 +1,120 @@
+page-hsdescription {
+
+.crd_cnt p {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 12px;
+    padding: 3px 0;
+}
+
+.crd_cnt{
+    padding: 0 8px 8px;
+}
+
+.crd_head {
+    padding: 8px 8px 0;
+}
+
+.crd_head p {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 19px;
+    text-transform: capitalize;
+    width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.country_b ion-col {
+    color: #c4013e;
+    float: left;
+    font-family: Myriad-Semibold;
+    font-size: 12px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.country_b ion-col > span {
+    color: #757575;
+}
+
+.jecob_pic {
+    position: absolute;
+    right: 72px;
+    top: -3px;
+}
+
+.jecob_pic img {
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+}
+
+.attach_pic {
+    width: 100%;
+    float: left;
+    text-align: left;
+    background: #f6dee5;
+    padding: 6px 0;
+}
+
+.attach_pic > img {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.submit{
+    margin: 0 auto;
+    text-transform: capitalize;
+    width: 40%;
+    font-family: Myriad-Bold;
+}
+
+.glb{
+    color: #383838;
+    font-size: 18px;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.glb span {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.card {
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+.atch_dnld {
+    width: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e3dada;
+    height: 90px;
+    margin-bottom: 10px;
+}
+.atch_dnld img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: auto;
+
+}
+
+}

@@ -1,0 +1,364 @@
+page-wrkdescription {
+
+.crd_cnt p {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+.crd_cnt{
+    padding: 0 8px 8px;
+}
+
+.crd_head {
+    padding: 8px 8px 0;
+}
+
+.crd_head p {
+   color: #c4013e;
+font-family: Myriad-Semibold;
+font-size: 19px;
+text-transform: capitalize;
+width: 170px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+
+
+}
+
+.country_b ion-col {
+    color: #c4013e;
+    float: left;
+    font-family: Myriad-Semibold;
+    font-size: 14px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.country_b ion-col > span {
+    color: #757575;
+}
+
+.jecob_pic {
+    width:24%;
+    float:left;
+}
+
+.jecob_pic img {
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+}
+.attach_pic {
+    width: 100%;
+    float: left;
+    text-align: left;
+    background: #f6dee5;
+    padding:6px 0;
+  
+}
+
+// .attach_pic {
+//     float: left;
+//     height: 50px;
+//     margin-bottom: 0px;
+//     overflow: hidden;
+//     position: relative;
+//     width: 50px;
+// }
+
+.attach_pic > img {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.submit{
+    margin: 0 auto;
+    text-transform: capitalize;
+    width: 45%;
+    font-family: Myriad-Bold;
+}
+
+.glb{
+    color: #383838;
+    font-size: 18px;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.glb span {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 13px;
+    vertical-align: middle;
+    padding-left: 3px;
+}
+
+.card {
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+/*------offer-css----------*/
+.ofer_mine {
+  width: 100%;
+  float: left;
+}
+.ofer_mine h4 {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #c4013e;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.offer_text {
+    float: left;
+    margin: 10px;
+    border-radius: 2px;
+    width: calc(100% - 20px);
+    font-size: 1.4rem;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.txt_desc {
+    width: 100%;
+    float: left;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+.desc_txt {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    font-size: 14px;
+    color: #757575;
+    font-weight: 500;
+}
+.lst_ofer {
+    width: 100%;
+    float: left;
+}
+.lst_ofer ul {
+    width: 100%;
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 6px 0px;
+}
+.lst_ofer ul li {
+    width: 100%;
+    float: left;
+    margin-bottom: 13px;
+    
+}
+.lst_ofer ul li span {
+  width: 46%;
+float: left;
+color: #757575;
+font-weight: 500;
+font-size: 14px;
+
+}
+.bill_head{
+
+color: #c4013e;
+font-size: 13px;
+font-weight: 500;
+width: 47%;
+float: left;
+margin: 0;
+}
+.pic_cvr {
+    width: 30px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 50px;
+    margin-top: 12px;
+}
+.pic_cvr img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+}
+.pic_img {
+    width: auto;
+    line-height: 57px;
+    padding-left: 8px;
+    font-weight: 500;
+    color: #757575;
+    font-size: 13px;
+}
+.atch_cvr {
+    width: 100%;
+    float: left;
+}
+.atch_cvr h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c4013e;
+}
+
+/*------offer-css----------*/
+.btn_regulr {
+    float: right;
+    background: 0px;
+    color: #000;
+    font-size: 13px;
+    position: absolute;
+    right: 7px;
+    z-index: 999999;
+    top: 9px;
+    width: 22%;
+}
+.ion-card-header {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.vew_nme {
+    width: 75%;
+    float: left;
+    color: #757575;
+}
+.rte_crs {
+    width: 46%;
+    float: left;
+    margin-right: 4px;
+}
+
+button.btn.btn-default.txt_lv {
+    width: 100%;
+    float: left;
+    background-color: #ffc300;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 6px 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.fnd_vte {
+    width: 100%;
+    float: left;
+    color: #c4013e;
+    font-weight: 500;
+}
+.lngh_cr{
+    width:100%;
+    float:left;
+}
+.table_stle{
+    width:100%;
+    float:left;
+    
+}
+.tble_wdht {
+    width: 100%;
+    text-align: center;
+    color: #c4013e;
+    font-size: 12px;
+    font-weight: 500;
+    float: left;
+    padding-bottom: 6px;
+}
+.tble_rw {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #757575;
+    background: #f2f2f2;
+    border: 1px solid #9b9b9b;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+.rlese_btn {
+    width: 35%;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: #ffc300;
+    
+}
+.atch_dnld {
+    width: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e3dada;
+    height: 90px;
+}
+.atch_dnld img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: auto;
+
+}
+.us_stng{
+    width: 100%;
+    text-align: center;
+    color: #c4013e;
+    font-size: 12px;
+    font-weight: 500;
+    float: left;
+    margin: 0;
+}
+.txt_bld {
+    color: #000;
+    font-weight: bold;
+    background: transparent;
+    font-size: 12px;
+}
+.rpn_cty{
+    padding-top:4px;
+}
+.tcking_lft{
+    background: transparent !important;
+    box-shadow: none !important;
+    text-align: center;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    display: table;
+    font-weight: bold;
+    color: #c4013e;
+    font-size: 12px;
+    padding-bottom: 7px;
+
+}
+.tble_colmn{
+    height: 19px;
+    border: 1px solid #9b9b9b;
+    border-bottom: 0px;
+}
+
+}

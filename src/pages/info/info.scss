@@ -1,0 +1,31 @@
+page-info {
+
+.item-md[detail-push] .item-inner, button.item-md:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'%20viewBox=\'0%200%2012%2020\'><path%20d=\'M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z\'%20fill=\'%23c8c7cc\'/></svg>");
+    background-position: right 14px center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    padding-right: 32px;
+}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.crd{
+    width:100%;
+    margin: 0;
+}
+
+
+.info ion-label {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 14px;
+}
+.font_sml{
+    font-size: 20px;
+}
+}

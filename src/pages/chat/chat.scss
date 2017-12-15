@@ -1,0 +1,262 @@
+page-chat {
+
+.user ion-col {
+    font-family: Myriad-Bold;
+    font-size: 12px;
+}
+
+.user ion-col:nth-child(1) {
+    color: #757575;
+}
+
+sup {
+    background: #1ac975;
+    border-radius: 50px;
+    float: left;
+    height: 6px;
+    margin-right: 4px;
+    top: 4px;
+    width: 6px;
+}
+
+.user_pic{
+    border-radius: 50%;
+    height: 35px;
+    overflow: hidden;
+    position: absolute;
+    width: 35px;
+    z-index: 9;
+}
+
+.left > .chat-users  {
+    background: #f1bac8;
+    border: 1px solid #f1bac8;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    margin-left: 38px;
+    max-width: 80%;
+    padding: 10px 60px 10px 10px;
+}
+.right > .chat-users {
+    background: #ffefba;
+    padding: 10px 60px 10px 10px;
+    float: right;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #ffefba;
+    max-width: 90%;
+}
+.chatlist {
+    padding: 5px 15px;
+}
+.count_no {
+    float: left;
+    margin-right: 3px;
+     font-family: Myriad-Semibold;
+    color: #878787;
+    font-size: 12px;
+}
+
+
+.chatusername{
+     font-family: Myriad-Semibold;
+    color: #50e3c2;
+    font-size: 12px;
+}
+.boxchat {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+}
+
+.chat-users p {
+    margin: 0;
+    width: 100%;
+     font-family: Myriad-Semibold;
+    color: #4a4a4a;
+    font-size: 12px;
+        margin-bottom: 8px;
+}
+.chat-users p a{pointer-events: none;
+cursor: default;}
+span.time {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 8px;
+     font-family: Myriad-Semibold;
+    color:#000;
+}
+
+
+.input_send input {
+    margin: 0;
+    background: #fff;
+    height: 0px;
+    padding: 5px;
+    font-size: 12px;
+     font-family: Myriad-Semibold;
+     width:100%;
+     
+}
+
+
+.ion-scroll {
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    height: 190px;
+    white-space: nowrap;
+    border-top: 1px solid rgba(151,151,151,0.2);
+    border-bottom: 1px solid rgba(151,151,151,0.2);
+    background: #fff;
+}
+
+.icon_send {
+    background: #c4013e;
+    border: 1px solid #c4013e;
+    border-radius: 50%;
+    color: #fff;
+    float: right;
+    font-size: 16px;
+    height: 32px;
+    padding: 0px 2px 0 4px;
+    position: absolute;
+    right: 4px;
+    text-align: center;
+    top: 4px;
+    width: 32px;
+    margin-top: 2px;
+}
+
+.input_send {
+    position: relative;
+    // padding-right: 32px;
+    width: 100%;
+float: left;
+background-color: #fff;
+
+
+}
+
+.icon_send .icon {
+    font-size: 22px;
+    padding-top: 5px;
+    padding-left: 3px;
+}
+
+// .input_send input {
+//     width: 100%;
+// }
+
+
+.fileUpload {
+    position: relative;
+}
+.fileUpload input.upload {
+    bottom: 0;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    right: 2px;
+    top: -36px;
+    width: 26px;
+    filter: alpha(opacity=0);
+}
+
+
+.fileUpload span {
+    position: absolute;
+    right: 5px;
+    top: -29px;
+}
+
+.fileUpload span .icon {
+    font-size: 22px;
+    position: absolute;
+    right: 32px;
+    top: 33px;
+    padding: 5px 10px;
+    background: #ffefba;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ffefba;
+    border-radius: 50px;
+    margin-top: 2px;
+    margin-right:3px;
+
+}
+.cht_sme {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.ftr_don{
+    bottom:72px !important;
+    border-top: 1px solid #ccc;
+}
+.meage_shw {
+    width: 100%;
+ float: left;
+ text-align: center;
+ font-size: 15px;
+ text-transform: capitalize;
+ margin: 215px 0;
+ color: #c4013e;
+ font-weight: 500;
+ 
+ }
+ .jecob_pic{
+    width: auto;
+    float: left;
+    margin-top: -7px;
+    padding-right: 2px;
+}
+
+.jecob_pic img{
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+}
+.wth_cht {
+    width: auto;
+    float: left;
+    padding-right: 2px;
+}
+.chatouter{
+    width:100%;
+    float:left;
+    padding:0 0 40px 0 !important;
+}
+.no_mess {
+    width: 80px;
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+.inp_spc{
+    padding:4px 60px 0px 6px;
+    height: 25px !important;
+    margin-bottom: 10px;
+ 
+}
+textarea.text-input{
+    margin-top:0px !important;
+}
+.ftr_brd{
+    border-top: 1px solid #ccc;
+}
+.chat_footer {
+    float: left;
+    width: 100%;
+}
+}
+

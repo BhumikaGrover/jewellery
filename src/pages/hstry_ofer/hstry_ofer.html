@@ -1,0 +1,114 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>History (Offers)</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+
+
+<ion-content>
+
+    <!-- <ion-list *ngSwitchCase="'history'" style="padding:8px;"> -->
+        <ion-list style="padding:8px;">
+          <!-- <div *ngIf="history_lenght!=0"> -->
+              <div *ngIf="history_lenght!=0">
+      <div class="first_tab" style="padding:8px;" *ngFor="let history_view of history_details">
+        <!-- <ion-card *ngFor="let contracts of active_contracts">
+                  <ion-card-content> -->
+        <ion-grid no-padding class="country">
+          <ion-row>
+            <ion-col col-8><button ion-button clear no-margin no-padding class="title ttle_small" (click)="activePage(history_view.REQUESTID);">{{history_view.title}}</button></ion-col>
+            <ion-col col-4 style="text-align:right;">
+              <ion-icon item-end><span *ngIf="format==history_view.creatededs">{{history_view.created | date:'h:mm a'}}</span>
+                <span *ngIf="format!=history_view.creatededs">{{history_view.created | date:'MMM d, yyyy'}}</span></ion-icon>
+            </ion-col>
+            <!-- <ion-col col-1 text-right>
+              <button ion-button clear icon-only no-margin style="height: 1.5rem;" (click)="editjobPage(history_view);"  [hidden]="history_view.status!='0'">
+          <ion-icon name="create" item-end></ion-icon>
+      </button>
+            </ion-col> -->
+            <!-- <ion-col col-1 text-right>
+              <button ion-button clear icon-only no-margin style="height: 1.5rem;" (click)="presentConfirm(history_view.REQUESTID)" [hidden]="history_view.totaloffers!=0" >
+      <ion-icon name="trash" item-end></ion-icon>
+    </button
+    ></ion-col> -->
+  </ion-row>
+</ion-grid>
+<ion-grid no-padding class="country_b">
+  <ion-row>
+    <!-- <ion-col col-4>
+      <h3>Delivery Days</h3>
+      <p>{{history_view.scriptolutiondays}}</p>
+    </ion-col> -->
+    <ion-col col-8>
+      <h3>Budget</h3>
+      <p>USD {{history_view.scriptolutionprice}}</p>
+    </ion-col>
+    <ion-col col-4 style="text-align:right;">
+ 
+      <button ion-button small color="yellow" class="submit align_st" (click)="activePage(history_view.REQUESTID);">View</button>
+      <!-- <p style="color:#c4013e;" (click)="activePage(history_view.REQUESTID);">View</p> -->
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<!-- <button ion-button small color="yellow" class="submit align_st" [hidden]="history_view.totaloffers==0" (click)="views_offer(history_view.REQUESTID)">{{history_view.totaloffers}} Offers</button> -->
+
+      </div>
+      <!-- <button ion-button small color="yellow" class="submit" *ngFor="let i of i_lenght">{{i_lenght}}</button> -->
+      <!-- <div class="first_tab" style="padding:8px;">
+  <ion-grid no-padding class="country">
+  <ion-row>
+    <ion-col col-7><button ion-button clear no-margin no-padding class="title">Job Title here</button></ion-col>
+    <ion-col col-3 text-right><ion-icon item-end><span>july,16 2017</span></ion-icon></ion-col>
+    <ion-col col-1 text-right>
+      <button ion-button clear icon-only no-margin style="height: 1.5rem;">
+          <ion-icon name="create" item-end></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-1 text-right>
+      <button ion-button clear icon-only no-margin style="height: 1.5rem;">
+      <ion-icon name="trash" item-end></ion-icon>
+    </button
+    ></ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid no-padding class="country_b">
+  <ion-row>
+    <ion-col col-4>
+      <h3>Delivery Days</h3>
+      <p>10 Days</p>
+    </ion-col>
+    <ion-col col-4>
+      <h3>Budget</h3>
+      <p>USD 2000</p>
+    </ion-col>
+    <ion-col col-4>
+      <h3>Job Status</h3>
+      <p style="color:#c4013e;">New</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<button ion-button small color="yellow" class="submit">3 Offers</button>
+
+  </div> -->
+  </div>
+  <div class="meage_shw" *ngIf="history_lenght==0"><img class="no_mess" src="assets/images/history.png"> No history yet !</div>
+    </ion-list>
+    <div *ngIf="show_in !=0 && this.findWork == 2 && history_lenght!=0">
+      <ion-infinite-scroll *ngIf="hasMoreData" (ionInfinite)="history_pagination($event)">
+        <ion-infinite-scroll-content  loadingText="Loading more data..."></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+    <!-- <div class="pagi">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+    </div> -->
+  <!-- </div> -->
+</ion-content>

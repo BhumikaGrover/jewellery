@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title class="lft_non"><div class="lft_non">Released Payment History</div></ion-title>
+  </ion-navbar>
+ <ion-toolbar>
+    <ion-title style="padding-left: 0px !important;">
+      <ion-grid>
+  <ion-row class="earn">
+    <ion-col col-8 no-padding style="padding-top: 8px;" [hidden]="lenght_release==0">Released Amount:<span style="color:#c4013e;"> USD {{total_amount}}</span></ion-col>
+    <ion-col col-4  text-right no-padding style="margin-bottom: 20px;"><button ion-button small color="yellow" class="submit" (click)="earnPage();" style="position: fixed;
+      right: 24px;">Earned Payment</button></ion-col>
+  </ion-row>
+</ion-grid>
+</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding>
+<div class="main_market">
+
+
+<div *ngIf="lenght_release!=0">
+<ion-card no-margin style="width:100%; margin-bottom: 10px;" *ngFor="let item of release_payments">
+  <ion-card-content no-padding>
+    <ion-grid class="country">
+      <ion-row>
+    <ion-col col-8 no-padding align="left"><button ion-button clear no-margin no-padding class="titles dot_pur" (click)="view_offers(item.REQUESTID)"><span class="dot_ttle">{{item.title}}</span></button></ion-col>
+    <!-- <ion-col col-3 text-right  no-padding><span style="color:#c4013e;"> Milestone 1</span></ion-col> -->
+    <ion-col col-4 text-right  no-padding><span>{{item.created | date:'d/MM/yyyy'}}</span></ion-col>
+  </ion-row>
+    </ion-grid>
+  </ion-card-content>
+
+  <ion-grid class="amount">
+  <ion-row>
+    <ion-col col-3><span class="brk_amt">Project Amount</span><span>USD </span><h5 class="itm_pmn">{{item.scriptolutionprice}}</h5></ion-col>
+    <ion-col col-3 ><span class="brk_amt">Offer</span><h6 class="amn_brk">Amount</h6><span>USD </span><h5 class="itm_pmn">{{item.bid_amount}}</h5></ion-col>
+    <ion-col col-3><span class="brk_amt">Released Amount</span><span *ngIf="item.totalamount != null">USD </span>
+      <h5 class="itm_pmn">{{item.totalamount}}</h5>
+      <span *ngIf="item.totalamount == null">USD </span>
+      <h5 *ngIf="item.totalamount == null" class="itm_pmn">0.00</h5>
+    </ion-col>
+    <ion-col col-3><span class="brk_amt">Remaining Amount</span><span>USD </span><h5 class="itm_pmn">{{item.scriptolutionprice-item.totalamount}}</h5></ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-card>
+
+</div>
+<!-- <ion-card no-margin style="width:100%; margin-bottom: 10px;">
+  <ion-card-content no-padding>
+    <ion-grid class="country">
+      <ion-row>
+    <ion-col col-6  no-padding><button ion-button clear no-margin no-padding class="titles">Job Title here</button></ion-col>
+    <ion-col col-3 text-right  no-padding><span style="color:#c4013e;"> Milestone 1</span></ion-col>
+    <ion-col col-3 text-right  no-padding><span> 22/7/2017</span></ion-col>
+  </ion-row>
+    </ion-grid>
+  </ion-card-content>
+
+  <ion-grid class="amount">
+  <ion-row>
+    <ion-col col-4>Project Amount<span>USD 520</span></ion-col>
+    <ion-col col-4>Released Amount<span>USD 200</span></ion-col>
+    <ion-col col-4>Remaining Amount<span>USD 200</span></ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-card> -->
+
+</div>
+<div  *ngIf="lenght_release==0" style="margin-top: 173px"><img src="assets/images/nopaymnt.png"> </div>
+
+</ion-content>

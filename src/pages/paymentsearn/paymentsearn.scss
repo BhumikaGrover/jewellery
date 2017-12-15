@@ -1,0 +1,101 @@
+page-paymentsearn {
+
+.country ion-col .titles span {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 13px;
+    text-transform: capitalize;
+    padding-top: 2px;
+}
+
+.titles {
+    height: auto;
+    vertical-align: middle;
+}
+
+.country span {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.amount ion-row ion-col{
+    color: #1f1f1f;
+    font-family: Myriad-Bold;
+    font-size: 11px;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+
+.amount .col > span {
+    float: left;
+    padding-top: 6px;
+    width: 100%;
+    color:#757575;
+    font-family: Myriad-rEGULAR;
+}
+
+.submit {
+    font-family: Myriad-Bold;
+    font-size: 11px;
+    margin: 0;
+    text-transform: capitalize;
+    box-shadow: none;
+}
+
+.earn ion-col{
+    font-family: Myriad-Bold;
+    font-size: 11px;
+}
+
+.earn {
+    padding-bottom: 5px;
+}
+.dot_ttle {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+.country.grid .button-inner {
+    width: 75%;
+    float: left;
+    text-align: left;
+}
+.brk_amt {
+    word-break: break-word;
+    width: 54px !important;
+    float: left !important;
+    color: #000 !important;
+    font-weight: 600;
+
+}
+.mt_bgt{
+margin-bottom:13px;
+}
+.itm_pmn {
+    float: left;
+    font-size: 11px !important;
+    width: 100%;
+    color: #757575 !important;
+    font-family: Myriad-rEGULAR;
+}
+
+.lft_non .toolbar-title {
+    padding-left: 0px;
+}
+.dot_pur{
+    width:100%;
+    float:left;
+}
+}

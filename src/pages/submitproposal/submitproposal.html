@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Submit Proposal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background:#f2f2f2;">
+<form class="frm" #heroForm="ngForm" novalidate >
+<ion-card>
+  <ion-card-content class="crd_cnt">
+
+    <ion-list class="job_title">
+      <h3>Write a detailed Proposal</h3>
+      
+    <ion-item no-padding class="txt_area">
+      <textarea placeholder="Share your solution with detailed description of your cover letter" [(ngModel)]="data.description" name="description" #description="ngModel" required></textarea>
+    </ion-item>
+    <div *ngIf="description.errors && (description.dirty || description.touched)" class="alert alert-danger">
+      <div [hidden]="!description.errors.required" class="alert alert-danger alt_strt7 mrg_at9">
+       This Field is required
+       </div>
+    </div>
+
+    <h3 style="padding-top:0;padding-bottom:10px; line-height:1.5;">Offer</h3>
+
+    <span class="title">Cost (USD)</span>
+    <p class="cost" no-padding no-margin>Enter the amount in which you can do this job.</p>
+    <ion-item no-padding>
+      <ion-input type="text" placeholder="in USD"  [(ngModel)]="data.amount" name="amount" #amount="ngModel"  pattern='[0-9]+' required></ion-input>
+    </ion-item>
+    <div *ngIf="amount.errors && (amount.dirty || amount.touched)" class="alert alert-danger">
+      <div [hidden]="!amount.errors.required" class="alert alert-danger alt_strt7 mrg_at9" style="margin-top:3px;">
+       This Field is required
+       </div>
+       <div [hidden]="!amount.errors.pattern" class="alert alert-danger alt_strt7 mrg_at9" style="margin-top:3px;"> 
+				Enter a valid Amount
+			</div>
+    </div>
+
+    <span class="title" style="padding-top: 10px;">Timeline (Days)</span>
+    <p class="cost" no-padding no-margin>Enter the number of days required to complete the job.</p>
+    <ion-item no-padding style="margin-bottom: 3px;">
+      <ion-input type="number" placeholder="in days" [(ngModel)]="data.deliver_day" name="deliver_day" #deliver_day="ngModel"  pattern='[0-9]+' required></ion-input>
+    </ion-item>
+    <div *ngIf="deliver_day.errors && (deliver_day.dirty || deliver_day.touched)" class="alert alert-danger">
+      <div [hidden]="!deliver_day.errors.required" class="alert alert-danger alt_strt7 ">
+       This Field is required
+       </div>
+       <div [hidden]="!deliver_day.errors.pattern" class="alert alert-danger alt_strt7 ">
+				Enter a valid number of days
+			</div>
+    </div>
+
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-6><span class="upload">Upload Attachment:</span></ion-col>
+      <ion-col col-6 text-right>
+        <div class="fileUpload">
+            <button (click)="browseAttachment()">Browse <ion-icon name="attach"></ion-icon></button>
+            <!-- <input type="file" class="upload" /> -->
+        </div>
+        </ion-col>
+    </ion-row>
+    <!-- <ion-row  [hidden]="fileSelected == 0"> -->
+    <ion-row  [hidden]="fileSelected == 0" >
+    <ion-col col-12 text-right style="padding-left: 0px;">
+    <button class="attach_pic" style="padding-left: 0px;" ><p class="shw_pra">{{showName}}</p></button>
+    <button (click)="remove_Post()" class="btn_crs"> <ion-icon class="minus_pc" name="remove"></ion-icon></button>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button small color="yellow" class="submit" (click)="callAPIToPostJob(heroForm)"  [disabled]="!heroForm.form.valid">Submit Proposal</button>
+  <button ion-button small color="red" outline class="cancel" (click)="cancel()">Cancel</button>
+
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+</form>
+
+</ion-content>

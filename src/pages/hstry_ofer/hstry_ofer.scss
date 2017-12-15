@@ -1,0 +1,336 @@
+page-hstry_ofer {
+
+.find_work{
+    background: #f2f2f2;
+    padding: 10px 0px;}
+
+.find_work ion-segment{
+
+     background: #f8f8f8;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+
+}
+
+.find_work .segment-ios .segment-button {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.find_work .segment-ios .segment-button:hover:not(.segment-activated) {
+    background-color: transparent;
+    transition: all 100ms linear 0s;
+}
+
+.find_work .segment-button.activated, .find_work .segment-button.segment-activated {
+    border-color: #c4013e;
+    background:#ffc300;
+    opacity: 1;
+    color: #000;
+}
+
+.find_work .segment-button {
+    height: 3rem;
+    line-height: 3rem;
+    text-transform: capitalize;
+    color:#000;
+    font-size: 1.1rem;
+}
+
+.country .icon > span {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 13px;
+     vertical-align: middle;
+     padding-left: 2px;
+}
+
+.country .icon {
+    font-size: 18px;
+     color: #383838;
+    
+}
+
+.country ion-col p {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+     font-size: 13px;
+}
+
+.country ion-col .title  {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 19px;
+    height: auto;
+    text-transform: capitalize;
+    vertical-align: middle;
+}
+
+.country .icon-md.ion-md-share, .country .icon-ios.ion-ios-share{
+    color: #c4013e;
+}
+
+.country p{font-family: Myriad-Regular;color:#757575;font-size: 14px;padding: 3px 0;font-family: Myriad-Regular;
+    color: #757575;
+    font-size: 13px;
+    padding: 3px 0;
+    width: 87%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+
+.first_tab {
+
+    box-shadow: 2px 5px 2px #000;
+    padding: 5px;
+    margin-bottom: 16px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);  /* Firefox 3.5 - 3.6 */
+    display: block;
+}
+
+.country_b{padding: 5px 0px !important;}
+
+.country_b ion-col {
+    color: #c4013e;
+    float: left;
+    font-family: Myriad-Semibold;
+    font-size: 13px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.rate ion-col {
+    font-size: 19px !important;
+}
+
+.country_b ion-col > .chng_low{
+    color: #757575;
+    width: 78px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+
+ 
+
+}
+
+.jecob_pic{
+    position: absolute;
+    right: 10px;
+    top: -3px;
+}
+
+.jecob_pic img{
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+    border: 1px solid #000;
+    float: left;
+}
+
+.submit {
+    font-family: Myriad-Bold;
+    font-size: 12px;
+    text-transform: capitalize;
+    margin: 0;
+    width: 100%;
+float: left;
+
+}
+
+.john .jecob_pic {
+    float: left;
+    position: unset;
+}
+
+.john p{
+    float: left;
+    margin: 0;
+    padding: 5px;
+     color: #757575;
+}
+
+.history_para {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+     font-size: 19px;
+}
+
+.msg ion-col {
+    color: #757575 !important;
+    font-size: 15px !important;
+}
+
+.submit .icon {
+    padding-right: 5px;
+}
+
+.country_b ion-col h3 {
+    color: #1f1f1f;
+    font-family: Myriad-Bold;
+    font-size: 13px;
+    margin: 0;
+}
+.country_b ion-col p {
+    color: #757575;
+    font-family: Myriad-Regular;
+    margin: 5px 0 0;
+}
+
+.icon_shre{
+    color:#000;
+    font-size:16px;
+}
+.ttle_small span {
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.align_st{
+    width:auto;
+    float:none;
+}
+.pst_nme {
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    width: 44px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+}
+.pst_bi {
+    width: auto;
+    float: left;
+    margin-right: 3px;
+}
+span.nm_dld {
+    width: 50%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+
+}
+.act_cmplte {
+    width: 40%;
+    float: right;
+    text-align: right;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c4013e;
+    font-size: 13px;
+}
+button.submit.sub_lk {
+    width: 80%;
+    float: right;
+}
+.button[icon-only] {
+    padding: 1px;
+    bottom: 3px;
+   
+    min-width: .9em;
+}
+
+.st_prpr {
+    width: auto;
+    float: left;
+    color: #757575;
+    font-size: 12px;
+    margin-top: -3px;
+
+  }
+  .con_prppr.icon.icon-md.ion-md-globe {
+
+    width: auto;
+    float: left;
+    margin-top: -2px;
+    margin-right: 2px;
+    color: #757575;
+    font-size: 14px;
+   
+  }
+  .meage_shw {
+    width: 100%;
+ float: left;
+ text-align: center;
+ font-size: 15px;
+ text-transform: capitalize;
+ margin: 111px 0;
+ color: #c4013e;
+ font-weight: 500;
+ 
+ }
+ .no_mess {
+    width: 130px;
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+.sub_hst {
+    width: 100%;
+    float: left;
+    background: #e6e6e6;
+    margin-bottom: 15px;
+  }
+  .sub_hst h3 {
+    width: 100%;
+    float: left;
+    color: #c4013e;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 6px 0px;
+  }
+  .cntr_prp{
+    width: auto;
+    float: none;
+    margin: 0 auto;
+    display: table;
+    padding-top: 10px;
+  }
+  .cntry_full{
+    padding-bottom: 0px;
+  }
+.usr_stt{
+    padding:0px 5px !important;
+    margin:0px !important;
+    width:75%;
+    float:left;
+}
+.pic_pture{
+    width: auto;
+    float: left;
+    margin-top: -4px;
+    margin-right: 2px;
+}
+.pic_pture img{
+    border-radius: 50%;
+    height: 25px;
+    overflow: hidden;
+    width: 25px;
+    border: 1px solid #000;
+    float: left;
+}
+}
+ion-loading.loading-md.loader {
+    background: rgba(0, 0, 0, 0.4);
+}
+.loading-md .loading-wrapper{
+    background:transparent;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+}
+.loading-md .spinner-bubbles circle {
+    fill: #ffffff;
+}

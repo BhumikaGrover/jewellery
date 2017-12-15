@@ -1,0 +1,219 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Job</ion-title>
+    <ion-buttons end>
+      <!-- <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button> -->
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="background:#f2f2f2;">
+  <form class="frm" #heroForm="ngForm" novalidate>
+    <ion-list class="job_title">
+      <h3>Enter as much information</h3>
+      <ion-item no-padding>
+        <ion-input [(ngModel)]="data.title" name="title" #title="ngModel" type="text" required placeholder="Job Title"></ion-input>
+        
+      </ion-item>
+<ion-label>
+          <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger red_txt">
+            <div [hidden]="!title.errors.required" class="alert alert-danger">
+              Job title is required
+            </div>
+          </div>
+        </ion-label>
+
+
+
+      <ion-item no-padding class="txt_area area_botm">
+        <textarea [(ngModel)]="data.description" name="description" #description="ngModel" required placeholder="Describe the work to be done"></textarea>
+        <!-- <ion-label>
+     <div *ngIf="description.errors && (description.dirty || description.touched)" class="alert alert-danger">
+       <div [hidden]="!description.errors.required" class="alert alert-danger">
+         Job description is required
+        </div>
+     </div>
+    </ion-label> -->
+      </ion-item>
+    </ion-list>
+
+    <ion-grid class="country_b">
+      <ion-row>
+
+        <ion-col col-12 style="padding-bottom: 0px;">
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-4>Posted By:</ion-col>
+              <ion-col col-8>
+                  <ion-avatar class="jecob_pic" item-start>
+                      <img src={{profileImage}}>
+                      </ion-avatar>
+                <span no-margin class="spn_stl">{{fname}}
+              
+              </span></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+
+        <ion-col col-12 style="padding-bottom: 13px; padding-top: 8px;">
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-4>Posted Date:</ion-col>
+              <ion-col col-8> <span no-margin>{{created | date:'d/MM/yyyy'}}</span></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col col-12 style="padding-bottom: 10px;">
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col col-4>Budget(USD):</ion-col>
+                <ion-col col-8>
+                  <ion-input [(ngModel)]="data.budget" name="budget" #budget="ngModel" type="number" placeholder="USD" class="clr" pattern='[0-9]+' required></ion-input>
+                </ion-col>
+                <ion-label>
+                  <div *ngIf="budget.errors && (budget.dirty || budget.touched)" class="alert alert-danger">
+                    <div [hidden]="!budget.errors.required" class="alert alert-danger">
+                      This field is required
+                    </div>
+                    <div [hidden]="!budget.errors.pattern" class="alert alert-danger">
+                        Enter a valid Amount
+                      </div>
+                  </div>
+                </ion-label>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+  
+          <ion-col col-12 style="padding-top: 7px;">
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col col-4>Quantity:</ion-col>
+                <ion-col col-8>
+                  <ion-input [(ngModel)]="data.quantity" name="quantity" #quantity="ngModel" type="number" placeholder="Enter Quantity" class="clr"
+                    required></ion-input>
+                </ion-col>
+                <ion-label>
+                  <div *ngIf="quantity.errors && (quantity.dirty || quantity.touched)" class="alert alert-danger">
+                    <div [hidden]="!quantity.errors.required" class="alert alert-danger">
+                      This field is required
+                    </div>
+                  </div>
+                </ion-label>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+       
+        </ion-row>
+
+      <ion-row>
+        <ion-col col-12 style="padding-bottom: 11px; padding-top: 11px;">
+
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-4>Element:</ion-col>
+              <ion-col col-8>
+                <span>
+                <ion-select [(ngModel)]="element" name="element" class="con_jewl" (ionChange)="elemetChoosen()">
+      <ion-option *ngFor="let element of elements()">{{element}}</ion-option>
+    </ion-select>
+              </span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col col-12 style="padding-top: 4px; padding-bottom: 15px;">
+          <ion-grid no-padding>
+            <ion-row [hidden]='caratVisible == 0'>
+              <ion-col col-4>Carat:</ion-col>
+              <ion-col col-8>
+                <span>
+                  <ion-select [(ngModel)]="carat" name="carat" class="con_jewl" (ionChange)="caratChosen()">
+      <ion-option *ngFor="let carat of carats()">{{carat}}</ion-option>
+    </ion-select>
+              </span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+
+      </ion-row>
+
+      
+      <ion-row>
+      
+
+           <ion-col col-12>
+              <ion-grid no-padding>
+                <ion-row>
+                  <ion-col col-4>Delivery Duration:</ion-col>
+                  <ion-col col-8>
+                    <ion-input [(ngModel)]="data.duration" name="duration" #duration="ngModel" required type="number" placeholder="Enter Duration"
+                      class="clr"></ion-input>
+                  </ion-col>
+                  <ion-label>
+                    <div *ngIf="duration.errors && (duration.dirty || duration.touched)" class="alert alert-danger">
+                      <div [hidden]="!duration.errors.required" class="alert alert-danger">
+                        This field is required
+                      </div>
+                    </div>
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+            <ion-col col-12  style="padding-top: 2px; padding-bottom: 5px;">
+                <ion-grid no-padding>
+                  <ion-row [hidden]='colorVisible == 0'>
+                    <ion-col col-3 style="width:15%;">Color:</ion-col>
+                    <ion-col col-9 class="clr" style="margin-top:-8px;">
+                      <ion-item style="min-height: 0px;">
+                        <ion-label>Yellow</ion-label>
+                        <ion-checkbox [(ngModel)]="yellow"  name="yellow" color="dark" checked="true" (ionChange)="updateColor()"></ion-checkbox>
+                      </ion-item>
+                      <ion-item style="min-height: 0px;">
+                        <ion-label>White</ion-label>
+                        <ion-checkbox [(ngModel)]="white"  name="White" color="dark" checked="true" (ionChange)="updateColor()"></ion-checkbox>
+                      </ion-item>
+                      <ion-item style="min-height: 0px;">
+                        <ion-label>Pink</ion-label>
+                        <ion-checkbox [(ngModel)]="pink"  name="Pink" color="dark" checked="true" (ionChange)="updateColor()"></ion-checkbox>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+      </ion-row>
+
+      <ion-row class="gap_load">
+        <ion-col col-6><span class="up_atch">Upload Attachment:</span>
+        </ion-col>
+        
+        <ion-col col-6 text-right>
+          <div class="fileUpload btn btn-primary">
+            <span (click)="browseAttachment()">Browse <ion-icon name="attach" ></ion-icon></span>
+            <input type="button" class="upload" />
+          </div>
+        </ion-col>
+        <span class="load_up">Uploading a new file will replace your already attached file.</span>
+      </ion-row>
+      <ion-row  [hidden]="fileSelected == 0">
+          <ion-col col-12 text-right>
+      <button  class="attach_pic" (click)="download()">{{showname}}</button>
+      <button (click)="remove_Post()"> <ion-icon class="minus_pc" name="remove"></ion-icon></button>
+    </ion-col>
+      </ion-row>
+      <div class="btn"> <button ion-button small color="yellow" class="submit" [disabled]="!heroForm.form.valid" (click)="callAPIToPostJob(heroForm)">Save Changes</button>
+      
+      </div>
+    </ion-grid>
+
+  </form>
+
+</ion-content>

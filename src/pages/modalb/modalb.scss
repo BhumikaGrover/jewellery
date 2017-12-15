@@ -1,0 +1,76 @@
+page-modalb {
+
+.sort h3 {
+    font-family: Myriad-Bold;
+    font-size: 14px;
+    margin: 0;
+    padding: 15px 0 0 8px;
+}
+
+
+.card{
+    background: #fffcfc;
+}
+
+.box_outer .img_box .card img{width:auto;display: inline-block;}
+
+.box_outer .img_box .card h4{margin:0;}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.market{
+background: #fffcfc;
+width:100%;
+float:left;
+padding: 10px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.market .input{
+    border: 1px solid #ddd;
+
+}
+
+.market .input .text-input{
+    background: #fff;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+}
+
+.submit {
+    box-shadow: none;
+    font-family: Myriad-Bold;
+    font-size: 15px;
+    margin: 10px auto 0;
+    text-transform: capitalize;
+    width: auto;
+}
+
+/**/
+ion-scroll {
+    float: left;
+    height:85px;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 15px;
+}
+.img_box  {
+    display: inline-block;
+    height:75px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 56px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.scroll-content{padding:0 !important;}
+/**/
+
+}

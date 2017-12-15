@@ -1,0 +1,54 @@
+page-faq {
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.market{
+background: #fffcfc;
+width:100%;
+float:left;
+padding: 10px;
+}
+
+.market .item{
+    background-color: #e5e5e5;
+    margin-bottom: 8px;
+    min-height: 3rem;
+    padding-left: 8px;
+}
+
+.market ion-label{
+    margin: 0px;
+}
+
+.market h3{
+    position: relative;
+    padding-right: 10px;
+    font-family: Myriad-Semibold;
+}
+
+.market .icon{
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.market .label.label-md > div {
+    border-top: 1px solid #ededed;
+    padding-top: 4px;
+    font-family: Myriad-Semibold;
+    color:#757575;
+}
+
+.market .label.label-ios > div {
+    border-top: 1px solid #ededed;
+    padding-top: 4px;
+    font-family: Myriad-Semibold;
+    color:#757575;
+}
+
+}

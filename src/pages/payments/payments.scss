@@ -1,0 +1,120 @@
+page-payments {
+
+.country ion-col .titles span {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 13px;
+    text-transform: capitalize;
+    padding-top: 2px;
+}
+
+.titles {
+    height: auto;
+    vertical-align: middle;
+}
+
+.country span {
+    color: #757575;
+    font-family: Myriad-Regular;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.main_market{
+    float: left;
+    padding: 8px;
+    width: 100%;
+}
+
+.amount ion-row ion-col{
+    color: #1f1f1f;
+    font-family: Myriad-Bold;
+    font-size: 11px;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+
+.amount .col > span {
+    float: left;
+    padding-top: 6px;
+    width: 100%;
+    color:#757575;
+    font-family: Myriad-rEGULAR;
+}
+
+.submit {
+    font-family: Myriad-Bold;
+    font-size: 11px;
+    margin: 0;
+    text-transform: capitalize;
+    box-shadow: none;
+}
+
+.earn ion-col{
+    font-family: Myriad-Bold;
+    font-size: 11px;
+}
+
+.earn {
+    padding-bottom: 5px;
+}
+.dot_ttle{
+width: 60%;
+float: left;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+display:block;
+}
+.country.grid .button-inner {
+    width: 75%;
+    float: left;
+    text-align: left;
+}
+.country ion-col .titles span {
+    color: #c4013e;
+    font-family: Myriad-Semibold;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+.dot_ttle {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+.brk_amt {
+    word-break: break-word;
+    width: 65px !important;
+    float: left !important;
+    color: #000 !important;
+    font-weight: 600;
+
+}
+.itm_pmn{
+    float: left;
+    font-size: 11px;
+    width: 100%;
+    color: #757575;
+    font-family: Myriad-rEGULAR;
+}
+.dot_pur{
+    width:100%;
+    float:left;
+}
+
+.lft_non .toolbar-title {
+    padding-left: 0px;
+}
+.amn_brk {
+    width: 65px !important;
+    float: left !important;
+    color: #000 !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+    margin: 0px !important;
+}
+}

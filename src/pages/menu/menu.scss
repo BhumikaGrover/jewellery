@@ -1,0 +1,69 @@
+page-menu {
+    
+    .sidebar .item{
+        background-color: #c4013e;
+        color:#fff;
+        border-bottom: 1px solid #fff;
+    }
+    .sidebar.content{
+        background-color: #c4013e;
+        color: #fff;
+    }
+    
+    .item:hover icon{color: #ffc300;}
+    
+    .item:hover ion-label{color: #ffc300;}
+    
+    .sidebar .icon-md-primary {
+        color: #ffc300 !important;
+    }
+    
+    .sidebar .item.activated ion-label{ color: #ffc300 !important;}
+    
+    .sidebar .list .item .item-inner {
+        border-bottom: 0px;
+        margin-left: 2px;
+    }
+    
+    .sidebar .list .item .item-inner .label{
+        font-family: "Myriad-Regular";
+    }
+    
+    .head_mnu .toolbar-background{
+        background: transparent;
+        border-color: #b2b2b2;
+    }
+    
+    .head_mnu .toolbar-title {
+        color: #fff !important;
+    }
+    
+    .usr img {
+        border: 2px solid #fff;
+        height: 65px;
+        width: 65px;
+    }
+    
+    .mn .item-inner {
+        border-bottom: 0px !important;
+    }
+    
+    .ftr {
+        padding-left: 16px;
+        padding-top: 8px;
+    }
+    .ftr > p {
+        font-family: 'Myriad-Regular';
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    
+    .bottom .toolbar-background{
+        background: transparent ;
+        border-color: transparent ;
+    }
+    .bar-button-default-ios{
+        color: #c4013e;  
+    }
+    }
+    

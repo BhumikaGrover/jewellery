@@ -1,0 +1,60 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Information</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+
+<ion-card class="crd">
+
+  <ion-list class="info">
+    <button ion-item (click)="aboutPage();">
+        <!-- <ion-icon name="person" item-start class="font_sml"></ion-icon> -->
+      About Us
+    </button>
+
+    <button ion-item (click)="deliveryPage();">
+      <!-- <ion-icon name="car" item-start class="font_sml"></ion-icon> -->
+      Delivery Policy
+    </button>
+
+    <button ion-item (click)="faqPage();">
+      <!-- <ion-icon name="chatboxes" item-start class="font_sml"></ion-icon> -->
+      FAQ
+    </button>
+
+    <button ion-item (click)="refundPage();">
+      
+        User Agreement
+    </button>
+
+    <button ion-item (click)="termsPage();">
+      
+      Terms & Conditions
+    </button>
+
+    <!-- <button ion-item (click)="privacyPage();">
+     
+      Privacy Policy
+    </button> -->
+
+    <!-- <button ion-item (click)="pricingPage();">
+      <<ion-icon name="pricetags" item-start class="font_sml"></ion-icon>>
+      Product Pricing
+    </button> -->
+
+  </ion-list>
+</ion-card>
+</div>
+</ion-content>

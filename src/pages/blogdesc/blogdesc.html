@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Blog</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+
+  <ion-card class="crd">
+
+      <div class="blog" *ngFor="let b of a">
+          <div class="wade">
+            <span>{{b.created | date:'MMMM d, yyyy'}}</span>
+            <h3>{{b.title}}</h3>
+            <!-- <span><ion-icon name="person"></ion-icon> Wade</span> -->
+            <!-- <button ion-button clear icon-only no-margin class="sh"><ion-icon name="share" class="share"></ion-icon></button> -->
+          </div>
+
+        <img src="{{blog_image_path}}{{b.image}}"/>
+        <ion-card-content>
+          <p class="descrb" [innerHTML]="b.description">
+          </p>
+          
+        </ion-card-content>
+      </div>
+
+  </ion-card>
+
+</div>
+
+</ion-content>

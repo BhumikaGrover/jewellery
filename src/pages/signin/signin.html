@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content scroll="false" overflow-scroll="false" padding style="background: #f1f1f1;">
+<div class="logo"><img src="assets/images/logo.png" /></div>
+
+<ion-list class="log_list">
+<form [formGroup]="signinform" (ngSubmit)="signin(signinform)">
+  <ion-item no-padding>
+    <ion-icon name="mail" item-start></ion-icon>
+    <ion-input type="text" placeholder="Username" [(ngModel)]="loginparam.username" formControlName="username"></ion-input>
+  </ion-item>
+  <p *ngIf="!isValid('username')" danger padding-left class="red-alt1">Username required</p>
+
+  <ion-item no-padding>
+    <ion-icon name="lock" item-start></ion-icon>
+    <ion-input type="password" placeholder="Password" [(ngModel)]="loginparam.password" formControlName="password"></ion-input>
+  </ion-item>
+<p *ngIf="!isValid('password')" danger padding-left class="red-alt1">Password required</p>
+  <!-- <div padding> -->
+    <div class="check">
+      <div class="cntr_remem" style="width:100%; margin:auto; text-align:center;">
+  
+  <ion-checkbox color="red"></ion-checkbox>Remember me
+</div>
+</div>
+<button ion-button block  color="yellow" class="submit" [disabled]="!signinform.valid">SIGN IN</button>
+</form>
+</ion-list>
+
+<!-- (click)="doLogin()" -->
+
+<button ion-button block class="submit facebuk" (click)="facebook_login()"><ion-icon name="logo-facebook" ></ion-icon> Login with Facebook</button>
+
+  
+<button ion-button color="red" clear class="forgot frgt_chnge" (click)="ForgotpwPage();">Forgot Password</button>
+<button ion-button color="red" clear class="forgot verify_chnge" (click)="resend()">Resend Verfication Link</button>
+<!-- <button ion-button color="red" clear class="forgot verify_chnge" (click)="facebook();">fgytytytytytink</button> -->
+<div class="acc111"><span>Don't have an account?</span><button ion-button color="red" clear  (click)="signupPage();" style="height: 15px;
+  margin: 0;  padding: 0 4px; font-size: 13px;  vertical-align: middle;">Sign up</button></div>
+
+</ion-content>

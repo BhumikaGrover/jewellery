@@ -1,0 +1,85 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Contact Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding style="background: #f2f2f2;">
+<div class="main_market">
+  <div class="market">
+
+<ion-grid>
+  <ion-row class="support">
+      <ion-col col-4>
+        <div class="picture"><img src="assets/images/contact1.png" /></div>
+        <span>Get In Touch</span>
+        <p>Phone: +97145530960</p>
+        <p>Email: info@bowdaa.com</p>
+      </ion-col>
+      <ion-col col-4>
+          <div class="picture"><img src="assets/images/contact2.png" /></div>
+          <span>Our Location</span>
+          <p>P.O. Box : 5586<br> Block B, Techno Hub,  Dubai Technology Entrepreneur Centre, Silicon Oasis, Dubai, UAE</p>
+      </ion-col>
+      <ion-col col-4>
+          <div class="picture"><img src="assets/images/contact3.png" /></div>
+            <!-- <span>24*7 Support</span> -->
+            <p>Bowdaa Technologies FZE | Silicon Oasis, Dtec, Techno Hub, Block B, Dubai, UAE</p>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+
+  </div>
+
+  <div class="market">
+
+    <ion-list>
+      <form  #heroForm="ngForm"  novalidate>
+      <ion-item>
+        <ion-input class="colr_rqur" type="text" placeholder="Name" [(ngModel)]="data.username" #username="ngModel" name="username" required></ion-input>
+      </ion-item>
+      <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger alt_strt7">
+        <div [hidden]="!username.errors.required" class="alert alert-danger alt_strt7">
+          Name is required
+         </div>
+      </div>
+      <ion-item> 
+        <ion-input class="colr_rqur" type="email" placeholder="Email" [(ngModel)]="data.email" #email="ngModel" name="email" required pattern='^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'></ion-input>
+      </ion-item>
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger alt_strt7">
+        <div [hidden]="!email.errors.required" class="alert alert-danger alt_strt7">
+        email is required
+       </div>
+       <div [hidden]="!email.errors.pattern" class="alert alert-danger alt_strt7">
+        Invalid email
+       </div>
+     </div>
+      <ion-item class="txt_area">
+          <textarea placeholder="Comment" [(ngModel)]="data.comment" #comment="ngModel" name="comment" required></textarea>
+      </ion-item>
+      <div *ngIf="comment.errors && (comment.dirty || comment.touched)" class="alert alert-danger alt_strt7">
+        <div [hidden]="!comment.errors.required" class="alert alert-danger alt_strt7">
+          Message is required
+         </div>
+      </div>
+      <div class="item" style="padding-top: 0;"><button ion-button block (click)="contactus(heroForm)" [disabled]="!heroForm.form.valid" color="yellow" class="submit">Submit</button></div>
+      </form > 
+    </ion-list>
+
+    
+    <div #map id="map" style="height:250px;position: initial;float:left;width:100%;"></div>
+
+    
+  </div>
+
+</div>
+</ion-content>
